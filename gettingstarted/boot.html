@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Boot process</title>
+    
+      <link rel="stylesheet" href="../_static/pygments.css">
+      <link rel="stylesheet" href="../_static/theme.css">
+      <link rel="stylesheet" href="../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="WiFi and Network Access" href="network.html" />
+  <link rel="prev" title="Quickstart" href="quickstart.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="current">
+            
+            <li class="toctree-l1 "><a href="summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 current"><a href="#" class="reference internal current">Boot process</a>
+
+                
+                <ul>
+                    
+                    <li class="toctree-l2"><a href="#run-mode" class="reference internal">Run mode</a></li>
+                    
+                </ul>
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../reference/modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+      <li>Boot process</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="quickstart.html"
+           title="previous chapter">← Quickstart</a>
+      </li>
+      <li class="next">
+        <a href="network.html"
+           title="next chapter">WiFi and Network Access →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="boot-process">
+<h1>Boot process<a class="headerlink" href="#boot-process" title="Permalink to this headline">¶</a></h1>
+<p>CodeBug Connect has three boot modes.</p>
+<ul class="simple">
+<li><p>By default CodeBug Connect boots in run mode. The exact behaviour
+depends on the <span class="xref std std-ref">Run mode boot configuration</span>.</p></li>
+<li><p>Pressing and holding the centre of button A while applying power will
+cause CodeBug Connect to boot as a USB drive. To prevent file system
+corruption it will not run any of your programs at the same time.</p></li>
+<li><p>CodeBug Connect can be set to upgrade itself. As part of this it will
+boot in a special mode to update its operating system. If it fails to
+find its operating system it will boot into upgrade mode. Upgrade more is
+completely separate mode which has no access to the filesystem and
+cannot run your programs. See <a class="reference internal" href="updating.html"><span class="doc">Updating CodeBug</span></a> for more information.</p></li>
+</ul>
+<div class="section" id="run-mode">
+<h2>Run mode<a class="headerlink" href="#run-mode" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="boot-configuration">
+<h3>boot configuration<a class="headerlink" href="#boot-configuration" title="Permalink to this headline">¶</a></h3>
+<p>In normal run mode, CodeBug Connect can do some tasks automatically,
+such as automatically connecting to a WiFi network, checking for updates
+or starting its webserver. These boot options are specified in the
+<code class="docutils literal notranslate"><span class="pre">config.json</span></code> file.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="nt">&quot;start_ap&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;auto_connect&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;fallback_to_ap&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;start_mdns&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;start_webconsole&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;start_webserver&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;remote_checkin&quot;</span><span class="p">:</span> <span class="s2">&quot;https://cbc.codebug.org.uk&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remote_debug&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;wait_for_connection&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;button_b_wifi_boot&quot;</span> <span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can set the options graphically, through the web interface. Alternatively
+you can edit the <code class="docutils literal notranslate"><span class="pre">config.json</span></code> just as you would any other file; either
+over USB as a removable drive, or through the web client.</p>
+</div>
+<div class="section" id="running-your-program">
+<h3>running your program<a class="headerlink" href="#running-your-program" title="Permalink to this headline">¶</a></h3>
+<p>Once the actions specified in <code class="docutils literal notranslate"><span class="pre">config.json</span></code> are complete, your CodeBug
+Connect runs the <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> file. This file can either contain code to run
+directly, or link to run your projects.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">boot.py</span></code> can be automatically setup when you deploy a project, so it may
+get overwritten. As such you are advised to keep you programs in their own
+file, and reference them in <code class="docutils literal notranslate"><span class="pre">boot.py</span></code>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="quickstart.html"
+           title="previous chapter">← Quickstart</a>
+      </li>
+      <li class="next">
+        <a href="network.html"
+           title="next chapter">WiFi and Network Access →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

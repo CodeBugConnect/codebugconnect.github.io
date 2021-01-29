@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>class Flash – access to built-in flash storage</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+      <li>class Flash – access to built-in flash storage</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="class-flash-access-to-built-in-flash-storage">
+<span id="pyb-flash"></span><h1>class Flash – access to built-in flash storage<a class="headerlink" href="#class-flash-access-to-built-in-flash-storage" title="Permalink to this headline">¶</a></h1>
+<p>The Flash class allows direct access to the primary flash device on the pyboard.</p>
+<p>In most cases, to store persistent data on the device, you’ll want to use a
+higher-level abstraction, for example the filesystem via Python’s standard file
+API, but this interface is useful to <span class="xref std std-ref">customise the filesystem
+configuration</span> or implement a low-level storage system for your
+application.</p>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyb.pyb.Flash">
+<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">Flash</code><a class="headerlink" href="#pyb.pyb.Flash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a block device that represents the flash device presented
+to the USB mass storage interface.</p>
+<p>It includes a virtual partition table at the start, and the actual flash
+starts at block <code class="docutils literal notranslate"><span class="pre">0x100</span></code>.</p>
+<p>This constructor is deprecated and will be removed in a future version of MicroPython.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">Flash</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">len</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create and return a block device that accesses the flash at the specified offset. The length defaults to the remaining size of the device.</p>
+<p>The <em>start</em> and <em>len</em> offsets are in bytes, and must be a multiple of the block size (typically 512 for internal flash).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt id="pyb.Flash.readblocks">
+<code class="sig-prename descclassname">Flash.</code><code class="sig-name descname">readblocks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_num</span></em>, <em class="sig-param"><span class="n">buf</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.Flash.readblocks" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-prename descclassname">Flash.</code><code class="sig-name descname">readblocks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_num</span></em>, <em class="sig-param"><span class="n">buf</span></em>, <em class="sig-param"><span class="n">offset</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyb.Flash.writeblocks">
+<code class="sig-prename descclassname">Flash.</code><code class="sig-name descname">writeblocks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_num</span></em>, <em class="sig-param"><span class="n">buf</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.Flash.writeblocks" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-prename descclassname">Flash.</code><code class="sig-name descname">writeblocks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_num</span></em>, <em class="sig-param"><span class="n">buf</span></em>, <em class="sig-param"><span class="n">offset</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyb.Flash.ioctl">
+<code class="sig-prename descclassname">Flash.</code><code class="sig-name descname">ioctl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cmd</span></em>, <em class="sig-param"><span class="n">arg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.Flash.ioctl" title="Permalink to this definition">¶</a></dt>
+<dd><p>These methods implement the simple and <a class="reference internal" href="uos.html#block-device-interface"><span class="std std-ref">extended</span></a> block protocol defined by
+<a class="reference internal" href="uos.html#uos.AbstractBlockDev" title="uos.AbstractBlockDev"><code class="xref py py-class docutils literal notranslate"><span class="pre">uos.AbstractBlockDev</span></code></a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="hardware-note">
+<h2>Hardware Note<a class="headerlink" href="#hardware-note" title="Permalink to this headline">¶</a></h2>
+<p>On boards with external spiflash (e.g. Pyboard D), the MicroPython firmware will
+be configured to use that as the primary flash storage. On all other boards, the
+internal flash inside the <span class="xref std std-term">MCU</span> will be used.</p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

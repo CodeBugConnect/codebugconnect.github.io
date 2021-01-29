@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>class Timer – control hardware timers</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="class WDT – watchdog timer" href="machine.WDT.html" />
+  <link rel="prev" title="class RTC – real time clock" href="machine.RTC.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">MicroPython libraries</a> &raquo;</li>
+      
+        <li><a href="machine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a> &raquo;</li>
+      
+      <li>class Timer – control hardware timers</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="machine.RTC.html"
+           title="previous chapter">← class RTC – real time clock</a>
+      </li>
+      <li class="next">
+        <a href="machine.WDT.html"
+           title="next chapter">class WDT – watchdog timer →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="class-timer-control-hardware-timers">
+<span id="machine-timer"></span><h1>class Timer – control hardware timers<a class="headerlink" href="#class-timer-control-hardware-timers" title="Permalink to this headline">¶</a></h1>
+<p>Hardware timers deal with timing of periods and events. Timers are perhaps
+the most flexible and heterogeneous kind of hardware in MCUs and SoCs,
+differently greatly from a model to a model. MicroPython’s Timer class
+defines a baseline operation of executing a callback with a given period
+(or once after some delay), and allow specific boards to define more
+non-standard behavior (which thus won’t be portable to other boards).</p>
+<p>See discussion of <a class="reference internal" href="machine.html#machine-callbacks"><span class="std std-ref">important constraints</span></a> on
+Timer callbacks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Memory can’t be allocated inside irq handlers (an interrupt) and so
+exceptions raised within a handler don’t give much information.  See
+<a class="reference internal" href="micropython.html#micropython.alloc_emergency_exception_buf" title="micropython.alloc_emergency_exception_buf"><code class="xref py py-func docutils literal notranslate"><span class="pre">micropython.alloc_emergency_exception_buf()</span></code></a> for how to get around this
+limitation.</p>
+</div>
+<p>If you are using a WiPy board please refer to <a class="reference internal" href="machine.TimerWiPy.html#machine-timerwipy"><span class="std std-ref">machine.TimerWiPy</span></a>
+instead of this class.</p>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="machine.Timer">
+<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">Timer</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a new timer object of the given id. Id of -1 constructs a
+virtual timer (if supported by a board).</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">init</span></code> for parameters of initialisation.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt id="machine.Timer.init">
+<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">Timer.PERIODIC</span></em>, <em class="sig-param"><span class="n">period</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">callback</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Timer.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise the timer. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tim</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>                         <span class="c1"># periodic with 100ms period</span>
+<span class="n">tim</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">ONE_SHOT</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>   <span class="c1"># one shot firing after 1000ms</span>
+</pre></div>
+</div>
+<p>Keyword arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> can be one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Timer.ONE_SHOT</span></code> - The timer runs once until the configured
+period of the channel expires.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Timer.PERIODIC</span></code> - The timer runs periodically at the configured
+frequency of the channel.</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="machine.Timer.deinit">
+<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Timer.deinit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deinitialises the timer. Stops the timer, and disables the timer peripheral.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt id="machine.Timer.ONE_SHOT">
+<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">ONE_SHOT</code><a class="headerlink" href="#machine.Timer.ONE_SHOT" title="Permalink to this definition">¶</a></dt>
+<dt id="machine.Timer.PERIODIC">
+<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">PERIODIC</code><a class="headerlink" href="#machine.Timer.PERIODIC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Timer operating mode.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="machine.RTC.html"
+           title="previous chapter">← class RTC – real time clock</a>
+      </li>
+      <li class="next">
+        <a href="machine.WDT.html"
+           title="next chapter">class WDT – watchdog timer →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

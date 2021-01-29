@@ -1,0 +1,6 @@
+********
+joystick
+********
+
+.. automodule:: cbc.joystick
+   :members:

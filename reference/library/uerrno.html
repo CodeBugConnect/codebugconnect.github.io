@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>uerrno – system error codes</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="uhashlib – hashing algorithms" href="uhashlib.html" />
+  <link rel="prev" title="ucollections – collection and container types" href="ucollections.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">MicroPython libraries</a> &raquo;</li>
+      
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – system error codes</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="ucollections.html"
+           title="previous chapter">← <code class="xref py py-mod docutils literal notranslate"><span class="pre">ucollections</span></code> – collection and container types</a>
+      </li>
+      <li class="next">
+        <a href="uhashlib.html"
+           title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uhashlib</span></code> – hashing algorithms →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="module-uerrno">
+<span id="uerrno-system-error-codes"></span><h1><a class="reference internal" href="#module-uerrno" title="uerrno: system error codes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code></a> – system error codes<a class="headerlink" href="#module-uerrno" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">|see_cpython_module|</span></a> <code class="xref py py-mod docutils literal notranslate"><span class="pre">python:errno</span></code>.</p>
+<p>This module provides access to symbolic error codes for <cite>OSError</cite> exception.
+A particular inventory of codes depends on <span class="xref std std-term">MicroPython port</span>.</p>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt>
+<code class="sig-name descname">EEXIST, EAGAIN, etc.</code></dt>
+<dd><p>Error codes, based on ANSI C/POSIX standard. All error codes start with
+“E”. As mentioned above, inventory of the codes depends on
+<span class="xref std std-term">MicroPython port</span>. Errors are usually accessible as <code class="docutils literal notranslate"><span class="pre">exc.args[0]</span></code>
+where <code class="docutils literal notranslate"><span class="pre">exc</span></code> is an instance of <cite>OSError</cite>. Usage example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">uos</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;my_dir&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">exc</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">uerrno</span><span class="o">.</span><span class="n">EEXIST</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Directory already exists&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="uerrno.errorcode">
+<code class="sig-prename descclassname">uerrno.</code><code class="sig-name descname">errorcode</code><a class="headerlink" href="#uerrno.errorcode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary mapping numeric error codes to strings with symbolic error
+code (see above):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">uerrno</span><span class="o">.</span><span class="n">errorcode</span><span class="p">[</span><span class="n">uerrno</span><span class="o">.</span><span class="n">EEXIST</span><span class="p">])</span>
+<span class="go">EEXIST</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="ucollections.html"
+           title="previous chapter">← <code class="xref py py-mod docutils literal notranslate"><span class="pre">ucollections</span></code> – collection and container types</a>
+      </li>
+      <li class="next">
+        <a href="uhashlib.html"
+           title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uhashlib</span></code> – hashing algorithms →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

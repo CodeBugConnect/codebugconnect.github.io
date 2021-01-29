@@ -1,0 +1,6 @@
+LED display
+Joysticks
+Legs
+Magnetometer
+Accelerometer
+Power

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>uio – input/output streams</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="ujson – JSON encoding and decoding" href="ujson.html" />
+  <link rel="prev" title="uheapq – heap queue algorithm" href="uheapq.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">MicroPython libraries</a> &raquo;</li>
+      
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – input/output streams</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="uheapq.html"
+           title="previous chapter">← <code class="xref py py-mod docutils literal notranslate"><span class="pre">uheapq</span></code> – heap queue algorithm</a>
+      </li>
+      <li class="next">
+        <a href="ujson.html"
+           title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSON encoding and decoding →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="module-uio">
+<span id="uio-input-output-streams"></span><h1><a class="reference internal" href="#module-uio" title="uio: input/output streams"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code></a> – input/output streams<a class="headerlink" href="#module-uio" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">|see_cpython_module|</span></a> <code class="xref py py-mod docutils literal notranslate"><span class="pre">python:io</span></code>.</p>
+<p>This module contains additional types of <cite>stream</cite> (file-like) objects
+and helper functions.</p>
+<div class="section" id="conceptual-hierarchy">
+<h2>Conceptual hierarchy<a class="headerlink" href="#conceptual-hierarchy" title="Permalink to this headline">¶</a></h2>
+<div class="attention admonition">
+<p class="admonition-title">Difference to CPython</p>
+<p>Conceptual hierarchy of stream base classes is simplified in MicroPython,
+as described in this section.</p>
+</div>
+<p>(Abstract) base stream classes, which serve as a foundation for behavior
+of all the concrete classes, adhere to few dichotomies (pair-wise
+classifications) in CPython. In MicroPython, they are somewhat simplified
+and made implicit to achieve higher efficiencies and save resources.</p>
+<p>An important dichotomy in CPython is unbuffered vs buffered streams. In
+MicroPython, all streams are currently unbuffered. This is because all
+modern OSes, and even many RTOSes and filesystem drivers already perform
+buffering on their side. Adding another layer of buffering is counter-
+productive (an issue known as “bufferbloat”) and takes precious memory.
+Note that there still cases where buffering may be useful, so we may
+introduce optional buffering support at a later time.</p>
+<p>But in CPython, another important dichotomy is tied with “bufferedness” -
+it’s whether a stream may incur short read/writes or not. A short read
+is when a user asks e.g. 10 bytes from a stream, but gets less, similarly
+for writes. In CPython, unbuffered streams are automatically short
+operation susceptible, while buffered are guarantee against them. The
+no short read/writes is an important trait, as it allows to develop
+more concise and efficient programs - something which is highly desirable
+for MicroPython. So, while MicroPython doesn’t support buffered streams,
+it still provides for no-short-operations streams. Whether there will
+be short operations or not depends on each particular class’ needs, but
+developers are strongly advised to favor no-short-operations behavior
+for the reasons stated above. For example, MicroPython sockets are
+guaranteed to avoid short read/writes. Actually, at this time, there is
+no example of a short-operations stream class in the core, and one would
+be a port-specific class, where such a need is governed by hardware
+peculiarities.</p>
+<p>The no-short-operations behavior gets tricky in case of non-blocking
+streams, blocking vs non-blocking behavior being another CPython dichotomy,
+fully supported by MicroPython. Non-blocking streams never wait for
+data either to arrive or be written - they read/write whatever possible,
+or signal lack of data (or ability to write data). Clearly, this conflicts
+with “no-short-operations” policy, and indeed, a case of non-blocking
+buffered (and this no-short-ops) streams is convoluted in CPython - in
+some places, such combination is prohibited, in some it’s undefined or
+just not documented, in some cases it raises verbose exceptions. The
+matter is much simpler in MicroPython: non-blocking stream are important
+for efficient asynchronous operations, so this property prevails on
+the “no-short-ops” one. So, while blocking streams will avoid short
+reads/writes whenever possible (the only case to get a short read is
+if end of file is reached, or in case of error (but errors don’t
+return short data, but raise exceptions)), non-blocking streams may
+produce short data to avoid blocking the operation.</p>
+<p>The final dichotomy is binary vs text streams. MicroPython of course
+supports these, but while in CPython text streams are inherently
+buffered, they aren’t in MicroPython. (Indeed, that’s one of the cases
+for which we may introduce buffering support.)</p>
+<p>Note that for efficiency, MicroPython doesn’t provide abstract base
+classes corresponding to the hierarchy above, and it’s not possible
+to implement, or subclass, a stream class in pure Python.</p>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="uio.open">
+<code class="sig-prename descclassname">uio.</code><code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'r'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#uio.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a file. Builtin <code class="docutils literal notranslate"><span class="pre">open()</span></code> function is aliased to this function.
+All ports (which provide access to file system) are required to support
+<em>mode</em> parameter, but support for other arguments vary by port.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="uio.FileIO">
+<em class="property">class </em><code class="sig-prename descclassname">uio.</code><code class="sig-name descname">FileIO</code><span class="sig-paren">(</span><em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#uio.FileIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is type of a file open in binary mode, e.g. using <code class="docutils literal notranslate"><span class="pre">open(name,</span> <span class="pre">&quot;rb&quot;)</span></code>.
+You should not instantiate this class directly.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="uio.TextIOWrapper">
+<em class="property">class </em><code class="sig-prename descclassname">uio.</code><code class="sig-name descname">TextIOWrapper</code><span class="sig-paren">(</span><em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#uio.TextIOWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is type of a file open in text mode, e.g. using <code class="docutils literal notranslate"><span class="pre">open(name,</span> <span class="pre">&quot;rt&quot;)</span></code>.
+You should not instantiate this class directly.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="uio.StringIO">
+<em class="property">class </em><code class="sig-prename descclassname">uio.</code><code class="sig-name descname">StringIO</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">string</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#uio.StringIO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="uio.BytesIO">
+<em class="property">class </em><code class="sig-prename descclassname">uio.</code><code class="sig-name descname">BytesIO</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">string</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#uio.BytesIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>In-memory file-like objects for input/output. <cite>StringIO</cite> is used for
+text-mode I/O (similar to a normal file opened with “t” modifier).
+<cite>BytesIO</cite> is used for binary-mode I/O (similar to a normal file
+opened with “b” modifier). Initial contents of file-like objects
+can be specified with <em>string</em> parameter (should be normal string
+for <cite>StringIO</cite> or bytes object for <cite>BytesIO</cite>). All the usual file
+methods like <code class="docutils literal notranslate"><span class="pre">read()</span></code>, <code class="docutils literal notranslate"><span class="pre">write()</span></code>, <code class="docutils literal notranslate"><span class="pre">seek()</span></code>, <code class="docutils literal notranslate"><span class="pre">flush()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">close()</span></code> are available on these objects, and additionally, a
+following method:</p>
+<dl class="py method">
+<dt id="uio.BytesIO.getvalue">
+<code class="sig-name descname">getvalue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uio.BytesIO.getvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current contents of the underlying buffer which holds data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">uio.</code><code class="sig-name descname">StringIO</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alloc_size</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">uio.</code><code class="sig-name descname">BytesIO</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alloc_size</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create an empty <cite>StringIO</cite>/<cite>BytesIO</cite> object, preallocated to hold up
+to <em>alloc_size</em> number of bytes. That means that writing that amount
+of bytes won’t lead to reallocation of the buffer, and thus won’t hit
+out-of-memory situation or lead to memory fragmentation. These constructors
+are a MicroPython extension and are recommended for usage only in special
+cases and in system-level libraries, not for end-user applications.</p>
+<div class="attention admonition">
+<p class="admonition-title">Difference to CPython</p>
+<p>These constructors are a MicroPython extension.</p>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="uheapq.html"
+           title="previous chapter">← <code class="xref py py-mod docutils literal notranslate"><span class="pre">uheapq</span></code> – heap queue algorithm</a>
+      </li>
+      <li class="next">
+        <a href="ujson.html"
+           title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSON encoding and decoding →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

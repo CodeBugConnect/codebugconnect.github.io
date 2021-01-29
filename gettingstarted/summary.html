@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Summary</title>
+    
+      <link rel="stylesheet" href="../_static/pygments.css">
+      <link rel="stylesheet" href="../_static/theme.css">
+      <link rel="stylesheet" href="../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Quickstart" href="quickstart.html" />
+  <link rel="prev" title="Welcome to CodeBug Connect’s documentation!" href="../index.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="current">
+            
+            <li class="toctree-l1 current"><a href="#" class="reference internal current">Summary</a>
+
+                
+                <ul>
+                    
+                    <li class="toctree-l2"><a href="#connecting-using-wifi" class="reference internal">Connecting using WiFi</a></li>
+                    
+                    <li class="toctree-l2"><a href="#connecting-with-usb" class="reference internal">Connecting with USB</a></li>
+                    
+                </ul>
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../reference/modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+      <li>Summary</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="../index.html"
+           title="previous chapter">← Welcome to CodeBug Connect’s documentation!</a>
+      </li>
+      <li class="next">
+        <a href="quickstart.html"
+           title="next chapter">Quickstart →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<p>CodeBug Connect runs programs from its 1MB of inbuilt storage. These programs
+are written in the Python language, but you don’t need to know Python.
+You can create programs by dragging and dropping blocks on the CodeBug website.
+Once you’ve completed your program, you need to transfer it onto your CodeBug.
+You can do this:</p>
+<ul class="simple">
+<li><p>with one button click from the CodeBug website over the Internet (provided
+your CodeBug Connect can also access the Internet!)</p></li>
+<li><p>with a direct connection to your CodeBug from your web browser over WiFi
+(Internet connection not required)</p></li>
+<li><p>over USB, with CodeBug Connect appearing as a removable disk drive.</p></li>
+</ul>
+<div class="section" id="connecting-using-wifi">
+<h2>Connecting using WiFi<a class="headerlink" href="#connecting-using-wifi" title="Permalink to this headline">¶</a></h2>
+<p>Using CodeBug Connect with WiFi also lets you interact with your programs;
+so you can print messages, see errors or provide data by typing in. It does
+mean your CodeBug has to be connected to WiFi, and your computer will need to
+be able to connect to it. For maximum flexibility, there are a number of ways
+you can connect.</p>
+<div class="section" id="using-an-existing-access-point">
+<h3>Using an existing Access point<a class="headerlink" href="#using-an-existing-access-point" title="Permalink to this headline">¶</a></h3>
+<p>This is probably the most common use case, your CodeBug connect will connect
+to a WiFi access point, such as your home, school or office router, or tether
+to a mobile phone. This means CodeBug Connect can access to the Internet.
+It also usually means other computers connected to the same access point
+will be able to connect to the CodeBug Connect.</p>
+</div>
+<div class="section" id="codebug-connect-s-built-in-access-point">
+<h3>CodeBug Connect’s Built in access point<a class="headerlink" href="#codebug-connect-s-built-in-access-point" title="Permalink to this headline">¶</a></h3>
+<p>CodeBug Connect can host its own access point for you to connect your computer.
+This setup is great if you’re somewhere without WiFi, or for before you’ve added
+the username and password of the access point you want CodeBug to connect to.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your computer is usually connected to the Internet over WiFi, when it
+connects to CodeBug’s access point, neither your computer nor CodeBug will be able
+to access the Internet.</p>
+</div>
+</div></blockquote>
+<p>Read more about using accessing CodeBug Connect over a <a class="reference internal" href="network.html"><span class="doc">WiFi and Network Access</span></a>.</p>
+</div>
+</div>
+<div class="section" id="connecting-with-usb">
+<h2>Connecting with USB<a class="headerlink" href="#connecting-with-usb" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>To make CodeBug Connect appear as a USB drive, press and hold the centre of button</dt><dd><p>A while plugging CodeBug in. Transfer or edit your files like you would any other
+on your computer.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To avoid corrupting the files, never unplug CodeBug connect without
+first chosing eject or equivalent in your operating system.</p>
+</div>
+<p>In USB mode, CodeBug does not run your programs. If it did there would be a risk
+that the filesystem would be accessed by both your programs and via USB at the
+same time which would lead to corruptiong. As such, after transferring files you
+must safely eject and then unplug and replug your CodeBug Connect for it to run
+your program.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CodeBug can hold many files and programs, so need to be told which one
+to run at boot. See <a class="reference internal" href="boot.html"><span class="doc">Boot process</span></a> for more information.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="../index.html"
+           title="previous chapter">← Welcome to CodeBug Connect’s documentation!</a>
+      </li>
+      <li class="next">
+        <a href="quickstart.html"
+           title="next chapter">Quickstart →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

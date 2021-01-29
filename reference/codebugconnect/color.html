@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>color</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="drawable" href="drawable.html" />
+  <link rel="prev" title="CodeBug Connect Specific Programming Reference" href="index.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">CodeBug Connect Specific Programming Reference</a> &raquo;</li>
+      
+      <li>color</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="index.html"
+           title="previous chapter">← CodeBug Connect Specific Programming Reference</a>
+      </li>
+      <li class="next">
+        <a href="drawable.html"
+           title="next chapter">drawable →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="module-color">
+<span id="color"></span><h1>color<a class="headerlink" href="#module-color" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="color.Color">
+<em class="property">class </em><code class="sig-prename descclassname">color.</code><code class="sig-name descname">Color</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#color.Color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a colour, providing conversions to and from various colour
+schemes (including <a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_model">RGB</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/YUV">YUV</a>, and <a class="reference external" href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSB</a>). Conversion from these
+schemes is achieved via the following constructors:</p>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_rgb()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_yuv()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_hsb()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_string()</span></code></p></li>
+</ul>
+<p>The main constructor is flexible and permits a variety of styles. The
+following calls are all equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">Color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>     <span class="c1"># colour name</span>
+<span class="o">&gt;&gt;</span> <span class="n">Color</span><span class="p">(</span><span class="s1">&#39;#660000&#39;</span><span class="p">)</span> <span class="c1"># HTML style</span>
+<span class="o">&gt;&gt;</span> <span class="n">Color</span><span class="p">(</span><span class="s1">&#39;#600&#39;</span><span class="p">)</span>    <span class="c1"># CSS short-hand</span>
+<span class="o">&gt;&gt;</span> <span class="n">Color</span><span class="p">(</span><span class="mi">102</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># R, G, B values</span>
+<span class="o">&gt;&gt;</span> <span class="n">Color</span><span class="p">(</span><span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">102</span><span class="p">)</span>     <span class="c1"># R, G, B values as keyword args</span>
+<span class="o">&gt;&gt;</span> <span class="n">Color</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">113</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mi">173</span><span class="p">)</span>  <span class="c1"># Y, U, V values as keyword args</span>
+<span class="o">&gt;&gt;</span> <span class="n">Color</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span> <span class="c1"># H, S, B values as keyword args</span>
+</pre></div>
+</div>
+<p>Conversion to these schemes is achieved by querying the following
+properties:</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">rgb</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">yuv</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">hsb</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">html</span></code></p></li>
+</ul>
+<p><a class="reference internal" href="#color.Color" title="color.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> instances are immutable, but new colours can be easily
+constructed by using standard mathematical operators on other <a class="reference internal" href="#color.Color" title="color.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>
+instances:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;#112233&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">Color</span><span class="p">(</span><span class="s1">&#39;#112233&#39;</span><span class="p">)</span>
+<span class="go">Color(&#39;#224466&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;#112233&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">Color(&#39;#224466&#39;)</span>
+</pre></div>
+</div>
+<p>Or with instances of <a class="reference internal" href="#color.RGB" title="color.RGB"><code class="xref py py-class docutils literal notranslate"><span class="pre">RGB</span></code></a>, <a class="reference internal" href="#color.YUV" title="color.YUV"><code class="xref py py-class docutils literal notranslate"><span class="pre">YUV</span></code></a>, and <a class="reference internal" href="#color.HSB" title="color.HSB"><code class="xref py py-class docutils literal notranslate"><span class="pre">HSB</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;#112233&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">RGB</span><span class="p">(</span><span class="mh">0x11</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">Color(&#39;#222233&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;#112233&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="n">HSB</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">Color(&#39;#224466&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;#112233&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">HSB</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">Color(&#39;#333333&#39;)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="color.Color.replace">
+<code class="sig-name descname">replace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">g</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">b</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">a</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#color.Color.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the colour with the red, green, blue, or alpha component replaced
+with the specified values. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">g</span><span class="o">=</span><span class="mh">0x22</span><span class="p">)</span>
+<span class="go">Color(&#39;#662200&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="color.HSB">
+<em class="property">class </em><code class="sig-prename descclassname">color.</code><code class="sig-name descname">HSB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h</span></em>, <em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#color.HSB" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="color.HSB.b">
+<code class="sig-name descname">b</code><a class="headerlink" href="#color.HSB.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.HSB.h">
+<code class="sig-name descname">h</code><a class="headerlink" href="#color.HSB.h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.HSB.s">
+<code class="sig-name descname">s</code><a class="headerlink" href="#color.HSB.s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="color.RGB">
+<em class="property">class </em><code class="sig-prename descclassname">color.</code><code class="sig-name descname">RGB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#color.RGB" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="color.RGB.b">
+<code class="sig-name descname">b</code><a class="headerlink" href="#color.RGB.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.RGB.g">
+<code class="sig-name descname">g</code><a class="headerlink" href="#color.RGB.g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.RGB.r">
+<code class="sig-name descname">r</code><a class="headerlink" href="#color.RGB.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="color.RGBA">
+<em class="property">class </em><code class="sig-prename descclassname">color.</code><code class="sig-name descname">RGBA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#color.RGBA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="color.RGBA.a">
+<code class="sig-name descname">a</code><a class="headerlink" href="#color.RGBA.a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.RGBA.b">
+<code class="sig-name descname">b</code><a class="headerlink" href="#color.RGBA.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.RGBA.g">
+<code class="sig-name descname">g</code><a class="headerlink" href="#color.RGBA.g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.RGBA.r">
+<code class="sig-name descname">r</code><a class="headerlink" href="#color.RGBA.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="color.YUV">
+<em class="property">class </em><code class="sig-prename descclassname">color.</code><code class="sig-name descname">YUV</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#color.YUV" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="color.YUV.u">
+<code class="sig-name descname">u</code><a class="headerlink" href="#color.YUV.u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.YUV.v">
+<code class="sig-name descname">v</code><a class="headerlink" href="#color.YUV.v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="color.YUV.y">
+<code class="sig-name descname">y</code><a class="headerlink" href="#color.YUV.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="index.html"
+           title="previous chapter">← CodeBug Connect Specific Programming Reference</a>
+      </li>
+      <li class="next">
+        <a href="drawable.html"
+           title="next chapter">drawable →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

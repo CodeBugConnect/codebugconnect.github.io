@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>class SD – secure digital memory card (cc3200 port only)</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="class SDCard – secure digital memory card" href="machine.SDCard.html" />
+  <link rel="prev" title="class WDT – watchdog timer" href="machine.WDT.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">MicroPython libraries</a> &raquo;</li>
+      
+        <li><a href="machine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a> &raquo;</li>
+      
+      <li>class SD – secure digital memory card (cc3200 port only)</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="machine.WDT.html"
+           title="previous chapter">← class WDT – watchdog timer</a>
+      </li>
+      <li class="next">
+        <a href="machine.SDCard.html"
+           title="next chapter">class SDCard – secure digital memory card →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="class-sd-secure-digital-memory-card-cc3200-port-only">
+<span id="machine-sd"></span><h1>class SD – secure digital memory card (cc3200 port only)<a class="headerlink" href="#class-sd-secure-digital-memory-card-cc3200-port-only" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a non-standard class and is only available on the cc3200 port.</p>
+</div>
+<p>The SD card class allows to configure and enable the memory card
+module of the WiPy and automatically mount it as <code class="docutils literal notranslate"><span class="pre">/sd</span></code> as part
+of the file system. There are several pin combinations that can be
+used to wire the SD card socket to the WiPy and the pins used can
+be specified in the constructor. Please check the <a class="reference external" href="https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png">pinout and alternate functions
+table.</a> for
+more info regarding the pins which can be remapped to be used with a SD card.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">SD</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># clk cmd and dat0 pins must be passed along with</span>
+<span class="c1"># their respective alternate functions</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">SD</span><span class="p">(</span><span class="n">pins</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;GP10&#39;</span><span class="p">,</span> <span class="s1">&#39;GP11&#39;</span><span class="p">,</span> <span class="s1">&#39;GP15&#39;</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">&#39;/sd&#39;</span><span class="p">)</span>
+<span class="c1"># do normal file operations</span>
+</pre></div>
+</div>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="machine.SD">
+<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SD</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a SD card object. See <code class="docutils literal notranslate"><span class="pre">init()</span></code> for parameters if initialization.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt id="machine.SD.init">
+<code class="sig-prename descclassname">SD.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">pins</span><span class="o">=</span><span class="default_value">('GP10', 'GP11', 'GP15')</span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable the SD card. In order to initialize the card, give it a 3-tuple:
+<code class="docutils literal notranslate"><span class="pre">(clk_pin,</span> <span class="pre">cmd_pin,</span> <span class="pre">dat0_pin)</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="machine.SD.deinit">
+<code class="sig-prename descclassname">SD.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD.deinit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable the SD card.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="machine.WDT.html"
+           title="previous chapter">← class WDT – watchdog timer</a>
+      </li>
+      <li class="next">
+        <a href="machine.SDCard.html"
+           title="next chapter">class SDCard – secure digital memory card →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>
