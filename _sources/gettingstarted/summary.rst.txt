@@ -41,9 +41,9 @@ CodeBug Connect can host its own access point for you to connect your computer.
 This setup is great if you're somewhere without WiFi, or for before you've added
 the username and password of the access point you want CodeBug to connect to. 
 
- .. note:: If your computer is usually connected to the Internet over WiFi, when it
-  connects to CodeBug's access point, neither your computer nor CodeBug will be able
-  to access the Internet.
+.. note:: If your computer is usually connected to the Internet over WiFi, when it
+ connects to CodeBug's access point, neither your computer nor CodeBug will be able
+ to access the Internet.
 
 Read more about using accessing CodeBug Connect over a :doc:`network`.
 
