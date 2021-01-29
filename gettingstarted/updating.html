@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Updating CodeBug</title>
+    
+      <link rel="stylesheet" href="../_static/pygments.css">
+      <link rel="stylesheet" href="../_static/theme.css">
+      <link rel="stylesheet" href="../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Programming Reference" href="../reference/modules.html" />
+  <link rel="prev" title="WiFi and Network Access" href="network.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="current">
+            
+            <li class="toctree-l1 "><a href="summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 current"><a href="#" class="reference internal current">Updating CodeBug</a>
+
+                
+                <ul>
+                    
+                    <li class="toctree-l2"><a href="#update-process" class="reference internal">Update Process</a></li>
+                    
+                </ul>
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../reference/modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+      <li>Updating CodeBug</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="network.html"
+           title="previous chapter">← WiFi and Network Access</a>
+      </li>
+      <li class="next">
+        <a href="../reference/modules.html"
+           title="next chapter">Programming Reference →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="updating-codebug">
+<h1>Updating CodeBug<a class="headerlink" href="#updating-codebug" title="Permalink to this headline">¶</a></h1>
+<p>TODO introduction</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You must store a WiFi SSID and password before attempting to update.</p>
+</div>
+<div class="section" id="update-process">
+<h2>Update Process<a class="headerlink" href="#update-process" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you have stored your WiFi Access point and password in your Codebug Connect.
+Before attempting to upgrade you should check CodeBug can successfully connect to your WiFi.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Always backup your files before updating CodeBug Connect.</p>
+</div>
+<p>To update CodeBug, follow these steps:</p>
+<ol class="arabic">
+<li><p>TODO enter the command to set CodeBug to update.</p></li>
+<li><p>Remove the power.</p></li>
+<li><p>Wait for 2 seconds and then reconnect power.</p></li>
+<li><p>CodeBug Connect will display light yellow searching for WiFi.</p>
+<img alt="Scanning for WiFi1" src="../_images/UpdateScan1.png" />
+<img alt="Scanning for WiFi2" src="../_images/UpdateScan2.png" />
+<img alt="Scanning for WiFi3" src="../_images/UpdateScan3.png" />
+</li>
+<li><p>Once network has been found CodeBug Connect will indicate successful WiFi connection.</p>
+<img alt="WiFi connected" src="../_images/WiFiConnectSuccess.png" />
+</li>
+<li><p>CodeBug Connect will attempt to connect to the update server.</p></li>
+<li><p>TODO Download</p></li>
+<li><p>TODO Complete, restart</p></li>
+</ol>
+<div class="section" id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h3>
+<img alt="WiFi connection failed" src="../_images/WiFiConnectFail.png" />
+<img alt="could not find any suitable WiFi" src="../_images/NoWiFiFound.png" />
+<p>connection failed
+download corrupt</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="network.html"
+           title="previous chapter">← WiFi and Network Access</a>
+      </li>
+      <li class="next">
+        <a href="../reference/modules.html"
+           title="next chapter">Programming Reference →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

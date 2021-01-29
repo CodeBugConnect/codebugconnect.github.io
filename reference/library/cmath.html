@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>cmath – mathematical functions for complex numbers</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="gc – control the garbage collector" href="gc.html" />
+  <link rel="prev" title="Builtin functions and exceptions" href="builtins.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">MicroPython libraries</a> &raquo;</li>
+      
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> – mathematical functions for complex numbers</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="builtins.html"
+           title="previous chapter">← Builtin functions and exceptions</a>
+      </li>
+      <li class="next">
+        <a href="gc.html"
+           title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gc</span></code> – control the garbage collector →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="module-cmath">
+<span id="cmath-mathematical-functions-for-complex-numbers"></span><h1><a class="reference internal" href="#module-cmath" title="cmath: mathematical functions for complex numbers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code></a> – mathematical functions for complex numbers<a class="headerlink" href="#module-cmath" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">|see_cpython_module|</span></a> <code class="xref py py-mod docutils literal notranslate"><span class="pre">python:cmath</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cmath</span></code> module provides some basic mathematical functions for
+working with complex numbers.</p>
+<p>Availability: not available on WiPy and ESP8266. Floating point support
+required for this module.</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="cmath.cos">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">cos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.cos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cosine of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cmath.exp">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">exp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.exp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the exponential of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cmath.log">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the natural logarithm of <code class="docutils literal notranslate"><span class="pre">z</span></code>.  The branch cut is along the negative real axis.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cmath.log10">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">log10</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.log10" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the base-10 logarithm of <code class="docutils literal notranslate"><span class="pre">z</span></code>.  The branch cut is along the negative real axis.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cmath.phase">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">phase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.phase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the phase of the number <code class="docutils literal notranslate"><span class="pre">z</span></code>, in the range (-pi, +pi].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cmath.polar">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">polar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.polar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns, as a tuple, the polar form of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cmath.rect">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">rect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">phi</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the complex number with modulus <code class="docutils literal notranslate"><span class="pre">r</span></code> and phase <code class="docutils literal notranslate"><span class="pre">phi</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cmath.sin">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">sin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.sin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sine of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cmath.sqrt">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">sqrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.sqrt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the square-root of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt id="cmath.e">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">e</code><a class="headerlink" href="#cmath.e" title="Permalink to this definition">¶</a></dt>
+<dd><p>base of the natural logarithm</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="cmath.pi">
+<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">pi</code><a class="headerlink" href="#cmath.pi" title="Permalink to this definition">¶</a></dt>
+<dd><p>the ratio of a circle’s circumference to its diameter</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="builtins.html"
+           title="previous chapter">← Builtin functions and exceptions</a>
+      </li>
+      <li class="next">
+        <a href="gc.html"
+           title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gc</span></code> – control the garbage collector →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

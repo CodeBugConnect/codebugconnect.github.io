@@ -1,0 +1,6 @@
+*****
+demos
+*****
+
+.. automodule:: cbc.demos
+   :members:

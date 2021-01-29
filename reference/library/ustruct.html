@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>ustruct – pack and unpack primitive data types</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="usys – system specific functions" href="usys.html" />
+  <link rel="prev" title="ussl – SSL/TLS module" href="ussl.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">MicroPython libraries</a> &raquo;</li>
+      
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – pack and unpack primitive data types</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="ussl.html"
+           title="previous chapter">← <code class="xref py py-mod docutils literal notranslate"><span class="pre">ussl</span></code> – SSL/TLS module</a>
+      </li>
+      <li class="next">
+        <a href="usys.html"
+           title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – system specific functions →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="module-ustruct">
+<span id="ustruct-pack-and-unpack-primitive-data-types"></span><h1><a class="reference internal" href="#module-ustruct" title="ustruct: pack and unpack primitive data types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code></a> – pack and unpack primitive data types<a class="headerlink" href="#module-ustruct" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">|see_cpython_module|</span></a> <code class="xref py py-mod docutils literal notranslate"><span class="pre">python:struct</span></code>.</p>
+<p>Supported size/byte order prefixes: <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code>.</p>
+<p>Supported format codes: <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>,
+<code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">Q</span></code>, <code class="docutils literal notranslate"><span class="pre">s</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code> (the latter 2 depending
+on the floating-point support).</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="ustruct.calcsize">
+<code class="sig-prename descclassname">ustruct.</code><code class="sig-name descname">calcsize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fmt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ustruct.calcsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of bytes needed to store the given <em>fmt</em>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ustruct.pack">
+<code class="sig-prename descclassname">ustruct.</code><code class="sig-name descname">pack</code><span class="sig-paren">(</span><em class="sig-param">fmt</em>, <em class="sig-param">v1</em>, <em class="sig-param">v2</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#ustruct.pack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack the values <em>v1</em>, <em>v2</em>, … according to the format string <em>fmt</em>.
+The return value is a bytes object encoding the values.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ustruct.pack_into">
+<code class="sig-prename descclassname">ustruct.</code><code class="sig-name descname">pack_into</code><span class="sig-paren">(</span><em class="sig-param">fmt</em>, <em class="sig-param">buffer</em>, <em class="sig-param">offset</em>, <em class="sig-param">v1</em>, <em class="sig-param">v2</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#ustruct.pack_into" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack the values <em>v1</em>, <em>v2</em>, … according to the format string <em>fmt</em>
+into a <em>buffer</em> starting at <em>offset</em>. <em>offset</em> may be negative to count
+from the end of <em>buffer</em>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ustruct.unpack">
+<code class="sig-prename descclassname">ustruct.</code><code class="sig-name descname">unpack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fmt</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ustruct.unpack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unpack from the <em>data</em> according to the format string <em>fmt</em>.
+The return value is a tuple of the unpacked values.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ustruct.unpack_from">
+<code class="sig-prename descclassname">ustruct.</code><code class="sig-name descname">unpack_from</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fmt</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ustruct.unpack_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unpack from the <em>data</em> starting at <em>offset</em> according to the format string
+<em>fmt</em>. <em>offset</em> may be negative to count from the end of <em>buffer</em>. The return
+value is a tuple of the unpacked values.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="ussl.html"
+           title="previous chapter">← <code class="xref py py-mod docutils literal notranslate"><span class="pre">ussl</span></code> – SSL/TLS module</a>
+      </li>
+      <li class="next">
+        <a href="usys.html"
+           title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – system specific functions →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

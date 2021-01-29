@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>class WDT – watchdog timer</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="class SD – secure digital memory card (cc3200 port only)" href="machine.SD.html" />
+  <link rel="prev" title="class Timer – control hardware timers" href="machine.Timer.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">MicroPython libraries</a> &raquo;</li>
+      
+        <li><a href="machine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a> &raquo;</li>
+      
+      <li>class WDT – watchdog timer</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="machine.Timer.html"
+           title="previous chapter">← class Timer – control hardware timers</a>
+      </li>
+      <li class="next">
+        <a href="machine.SD.html"
+           title="next chapter">class SD – secure digital memory card (cc3200 port only) →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="class-wdt-watchdog-timer">
+<span id="machine-wdt"></span><h1>class WDT – watchdog timer<a class="headerlink" href="#class-wdt-watchdog-timer" title="Permalink to this headline">¶</a></h1>
+<p>The WDT is used to restart the system when the application crashes and ends
+up into a non recoverable state. Once started it cannot be stopped or
+reconfigured in any way. After enabling, the application must “feed” the
+watchdog periodically to prevent it from expiring and resetting the system.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">WDT</span>
+<span class="n">wdt</span> <span class="o">=</span> <span class="n">WDT</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>  <span class="c1"># enable it with a timeout of 2s</span>
+<span class="n">wdt</span><span class="o">.</span><span class="n">feed</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Availability of this class: pyboard, WiPy, esp8266, esp32.</p>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="machine.WDT">
+<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">WDT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">5000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.WDT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a WDT object and start it. The timeout must be given in milliseconds.
+Once it is running the timeout cannot be changed and the WDT cannot be stopped either.</p>
+<p>Notes: On the esp32 the minimum timeout is 1 second. On the esp8266 a timeout
+cannot be specified, it is determined by the underlying system.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt id="machine.wdt.feed">
+<code class="sig-prename descclassname">wdt.</code><code class="sig-name descname">feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.wdt.feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feed the WDT to prevent it from resetting the system. The application
+should place this call in a sensible place ensuring that the WDT is
+only fed after verifying that everything is functioning correctly.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="machine.Timer.html"
+           title="previous chapter">← class Timer – control hardware timers</a>
+      </li>
+      <li class="next">
+        <a href="machine.SD.html"
+           title="next chapter">class SD – secure digital memory card (cc3200 port only) →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

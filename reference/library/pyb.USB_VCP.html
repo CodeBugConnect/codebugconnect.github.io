@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>class USB_VCP – USB virtual comm port</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+      <li>class USB_VCP – USB virtual comm port</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="class-usb-vcp-usb-virtual-comm-port">
+<span id="pyb-usb-vcp"></span><h1>class USB_VCP – USB virtual comm port<a class="headerlink" href="#class-usb-vcp-usb-virtual-comm-port" title="Permalink to this headline">¶</a></h1>
+<p>The USB_VCP class allows creation of a <cite>stream</cite>-like object representing the USB
+virtual comm port.  It can be used to read and write data over USB to
+the connected host.</p>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyb.pyb.USB_VCP">
+<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">USB_VCP</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.USB_VCP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new USB_VCP object.  The <em>id</em> argument specifies which USB VCP port to
+use.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt id="pyb.USB_VCP.init">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">flow</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the USB VCP port.  If the <em>flow</em> argument is not -1 then the value sets
+the flow control, which can be a bitwise-or of <code class="docutils literal notranslate"><span class="pre">USB_VCP.RTS</span></code> and <code class="docutils literal notranslate"><span class="pre">USB_VCP.CTS</span></code>.
+RTS is used to control read behaviour and CTS, to control write behaviour.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.setinterrupt">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">setinterrupt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">chr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.setinterrupt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the character which interrupts running Python code.  This is set
+to 3 (CTRL-C) by default, and when a CTRL-C character is received over
+the USB VCP port, a KeyboardInterrupt exception is raised.</p>
+<p>Set to -1 to disable this interrupt feature.  This is useful when you
+want to send raw bytes over the USB VCP port.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.isconnected">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">isconnected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.isconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if USB is connected as a serial device, else <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.any">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">any</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.any" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if any characters waiting, else <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.close">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method does nothing.  It exists so the USB_VCP object can act as
+a file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.read">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">nbytes</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read at most <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> from the serial device and return them as a
+bytes object.  If <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> is not specified then the method reads
+all available bytes from the serial device.
+USB_VCP <cite>stream</cite> implicitly works in non-blocking mode,
+so if no pending data available, this method will return immediately
+with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.readinto">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">readinto</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="optional">[</span>, <em class="sig-param">maxlen</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readinto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read bytes from the serial device and store them into <code class="docutils literal notranslate"><span class="pre">buf</span></code>, which
+should be a buffer-like object.  At most <code class="docutils literal notranslate"><span class="pre">len(buf)</span></code> bytes are read.
+If <code class="docutils literal notranslate"><span class="pre">maxlen</span></code> is given and then at most <code class="docutils literal notranslate"><span class="pre">min(maxlen,</span> <span class="pre">len(buf))</span></code> bytes
+are read.</p>
+<p>Returns the number of bytes read and stored into <code class="docutils literal notranslate"><span class="pre">buf</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>
+if no pending data available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.readline">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a whole line from the serial device.</p>
+<p>Returns a bytes object containing the data, including the trailing
+newline character or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no pending data available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.readlines">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read as much data as possible from the serial device, breaking it into
+lines.</p>
+<p>Returns a list of bytes objects, each object being one of the lines.
+Each line will include the newline character.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.write">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">buf</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the bytes from <code class="docutils literal notranslate"><span class="pre">buf</span></code> to the serial device.</p>
+<p>Returns the number of bytes written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.recv">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">5000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.recv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive data on the bus:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> can be an integer, which is the number of bytes to receive,
+or a mutable buffer, which will be filled with received bytes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code> is the timeout in milliseconds to wait for the receive.</p></li>
+</ul>
+</div></blockquote>
+<p>Return value: if <code class="docutils literal notranslate"><span class="pre">data</span></code> is an integer then a new buffer of the bytes received,
+otherwise the number of bytes read into <code class="docutils literal notranslate"><span class="pre">data</span></code> is returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyb.USB_VCP.send">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">5000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send data over the USB VCP:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> is the data to send (an integer to send, or a buffer object).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code> is the timeout in milliseconds to wait for the send.</p></li>
+</ul>
+</div></blockquote>
+<p>Return value: number of bytes sent.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt id="pyb.USB_VCP.RTS">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">RTS</code><a class="headerlink" href="#pyb.USB_VCP.RTS" title="Permalink to this definition">¶</a></dt>
+<dt id="pyb.USB_VCP.CTS">
+<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">CTS</code><a class="headerlink" href="#pyb.USB_VCP.CTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>to select the flow control type.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

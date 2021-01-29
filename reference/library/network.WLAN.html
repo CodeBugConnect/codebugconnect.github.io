@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>class WLAN – control built-in WiFi interfaces</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/override.css">
+      
+
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="class WLANWiPy – WiPy specific WiFi control" href="network.WLANWiPy.html" />
+  <link rel="prev" title="network — network configuration" href="network.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><div class="navbar" @toggle-sidebar="toggleSidebar">
+    <div class="home-link-container">
+        <router-link to="../../index.html" class="home-link">
+        
+          <span class="site-name">CodeBug Connect</span>
+      </router-link>
+    </div>
+  
+    <div class="links">
+      <div class="can-hide">
+
+
+
+      </div>
+    </div>
+  </div>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <div class="sidebar" @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+    <div class="caption"><span class="caption-text">Search</span>
+      <div class="searchformwrapper">
+        <form autocomplete="off" class="search" action="../../search.html" method="get">
+          <input type="text" name="q" autocomplete="off" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+  </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    
+        <div class="sidebar-group">
+        <p class="caption">
+            <span class="caption-text"><a href="../../index.html#welcome-to-codebug-connect-s-documentation">Contents:</a></span>
+        </p>
+        <ul class="">
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/summary.html" class="reference internal ">Summary</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/quickstart.html" class="reference internal ">Quickstart</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/boot.html" class="reference internal ">Boot process</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/network.html" class="reference internal ">WiFi and Network Access</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../modules.html" class="reference internal ">Programming Reference</a>
+
+                
+            </li>
+
+            
+        </ul>
+        </div>
+    
+</div>
+        </div>
+
+      <div class="page">
+          <div class="body-header" role="navigation" aria-label="navigation">
+    
+    <ul class="breadcrumbs">
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../modules.html">Programming Reference</a> &raquo;</li>
+      
+        <li><a href="index.html">MicroPython libraries</a> &raquo;</li>
+      
+        <li><a href="network.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — network configuration</a> &raquo;</li>
+      
+      <li>class WLAN – control built-in WiFi interfaces</li>
+    </ul>
+    
+  
+    <ul class="page-nav">
+      <li class="prev">
+        <a href="network.html"
+           title="previous chapter">← <code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — network configuration</a>
+      </li>
+      <li class="next">
+        <a href="network.WLANWiPy.html"
+           title="next chapter">class WLANWiPy – WiPy specific WiFi control →</a>
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="class-wlan-control-built-in-wifi-interfaces">
+<span id="network-wlan"></span><h1>class WLAN – control built-in WiFi interfaces<a class="headerlink" href="#class-wlan-control-built-in-wifi-interfaces" title="Permalink to this headline">¶</a></h1>
+<p>This class provides a driver for WiFi network processors.  Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">network</span>
+<span class="c1"># enable station interface and connect to WiFi access point</span>
+<span class="n">nic</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">STA_IF</span><span class="p">)</span>
+<span class="n">nic</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nic</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;your-ssid&#39;</span><span class="p">,</span> <span class="s1">&#39;your-password&#39;</span><span class="p">)</span>
+<span class="c1"># now use sockets as usual</span>
+</pre></div>
+</div>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="network.WLAN">
+<em class="property">class </em><code class="sig-prename descclassname">network.</code><code class="sig-name descname">WLAN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Create a WLAN network interface object. Supported interfaces are
+<code class="docutils literal notranslate"><span class="pre">network.STA_IF</span></code> (station aka client, connects to upstream WiFi access
+points) and <code class="docutils literal notranslate"><span class="pre">network.AP_IF</span></code> (access point, allows other WiFi clients to
+connect). Availability of the methods below depends on interface type.
+For example, only STA interface may <cite>WLAN.connect()</cite> to an access point.</p>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt id="network.WLAN.active">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">active</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">is_active</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activate (“up”) or deactivate (“down”) network interface, if boolean
+argument is passed. Otherwise, query current state if no argument is
+provided. Most other methods require active interface.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="network.WLAN.connect">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ssid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">password</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">bssid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to the specified wireless network, using the specified password.
+If <em>bssid</em> is given then the connection will be restricted to the
+access-point with that MAC address (the <em>ssid</em> must also be specified
+in this case).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="network.WLAN.disconnect">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect from the currently connected wireless network.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="network.WLAN.scan">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">scan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan for the available wireless networks.</p>
+<p>Scanning is only possible on STA interface. Returns list of tuples with
+the information about WiFi access points:</p>
+<blockquote>
+<div><p>(ssid, bssid, channel, RSSI, authmode, hidden)</p>
+</div></blockquote>
+<p><em>bssid</em> is hardware address of an access point, in binary form, returned as
+bytes object. You can use <cite>ubinascii.hexlify()</cite> to convert it to ASCII form.</p>
+<p>There are five values for authmode:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 – open</p></li>
+<li><p>1 – WEP</p></li>
+<li><p>2 – WPA-PSK</p></li>
+<li><p>3 – WPA2-PSK</p></li>
+<li><p>4 – WPA/WPA2-PSK</p></li>
+</ul>
+</div></blockquote>
+<p>and two for hidden:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 – visible</p></li>
+<li><p>1 – hidden</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="network.WLAN.status">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">status</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">param</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current status of the wireless connection.</p>
+<p>When called with no argument the return value describes the network link status.
+The possible statuses are defined as constants:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_IDLE</span></code> – no connection and no activity,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_CONNECTING</span></code> – connecting in progress,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_WRONG_PASSWORD</span></code> – failed due to incorrect password,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_NO_AP_FOUND</span></code> – failed because no access point replied,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_CONNECT_FAIL</span></code> – failed due to other problems,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_GOT_IP</span></code> – connection successful.</p></li>
+</ul>
+</div></blockquote>
+<p>When called with one argument <em>param</em> should be a string naming the status
+parameter to retrieve.  Supported parameters in WiFI STA mode are: <code class="docutils literal notranslate"><span class="pre">'rssi'</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="network.WLAN.isconnected">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">isconnected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.isconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>In case of STA mode, returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if connected to a WiFi access
+point and has a valid IP address.  In AP mode returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when a
+station is connected. Returns <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="network.WLAN.ifconfig">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">ifconfig</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">(ip</em>, <em class="sig-param">subnet</em>, <em class="sig-param">gateway</em>, <em class="sig-param">dns)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.ifconfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/set IP-level network interface parameters: IP address, subnet mask,
+gateway and DNS server. When called with no arguments, this method returns
+a 4-tuple with the above information. To set the above values, pass a
+4-tuple with the required information.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nic</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">((</span><span class="s1">&#39;192.168.0.4&#39;</span><span class="p">,</span> <span class="s1">&#39;255.255.255.0&#39;</span><span class="p">,</span> <span class="s1">&#39;192.168.0.1&#39;</span><span class="p">,</span> <span class="s1">&#39;8.8.8.8&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="network.WLAN.config">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param">'param'</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.config" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param">param=value</em>, <em class="sig-param">...</em><span class="sig-paren">)</span></dt>
+<dd><p>Get or set general network interface parameters. These methods allow to work
+with additional parameters beyond standard IP configuration (as dealt with by
+<cite>WLAN.ifconfig()</cite>). These include network-specific and hardware-specific
+parameters. For setting parameters, keyword argument syntax should be used,
+multiple parameters can be set at once. For querying, parameters name should
+be quoted as a string, and only one parameter can be queries at time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set WiFi access point name (formally known as ESSID) and WiFi channel</span>
+<span class="n">ap</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">essid</span><span class="o">=</span><span class="s1">&#39;My AP&#39;</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="c1"># Query params one by one</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s1">&#39;essid&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s1">&#39;channel&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Following are commonly supported parameters (availability of a specific parameter
+depends on network technology type, driver, and <span class="xref std std-term">MicroPython port</span>).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mac</p></td>
+<td><p>MAC address (bytes)</p></td>
+</tr>
+<tr class="row-odd"><td><p>essid</p></td>
+<td><p>WiFi access point name (string)</p></td>
+</tr>
+<tr class="row-even"><td><p>channel</p></td>
+<td><p>WiFi channel (integer)</p></td>
+</tr>
+<tr class="row-odd"><td><p>hidden</p></td>
+<td><p>Whether ESSID is hidden (boolean)</p></td>
+</tr>
+<tr class="row-even"><td><p>authmode</p></td>
+<td><p>Authentication mode supported (enumeration, see module constants)</p></td>
+</tr>
+<tr class="row-odd"><td><p>password</p></td>
+<td><p>Access password (string)</p></td>
+</tr>
+<tr class="row-even"><td><p>dhcp_hostname</p></td>
+<td><p>The DHCP hostname to use</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+      <li class="prev">
+        <a href="network.html"
+           title="previous chapter">← <code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — network configuration</a>
+      </li>
+      <li class="next">
+        <a href="network.WLANWiPy.html"
+           title="next chapter">class WLANWiPy – WiPy specific WiFi control →</a>
+      </li>
+    </ul><div class="footer" role="contentinfo">
+        &#169; Copyright 2020, OpenLX SP Ltd.
+      <br>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>
