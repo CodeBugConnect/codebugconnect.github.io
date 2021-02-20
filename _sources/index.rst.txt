@@ -11,11 +11,11 @@ Welcome to CodeBug Connect's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   gettingstarted/summary
    gettingstarted/quickstart
-   gettingstarted/boot
-   gettingstarted/network
+   gettingstarted/setup_wifi
    gettingstarted/updating
+   detail/connection_modes
+   detail/boot
    reference/modules
 
 Indices and tables
