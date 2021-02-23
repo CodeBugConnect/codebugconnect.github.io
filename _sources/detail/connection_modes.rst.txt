@@ -43,7 +43,7 @@ Read more about using accessing CodeBug Connect over a :doc:`network`.
 Connecting with USB
 ===================
 
-To make CodeBug Connect appear as a USB drive, press and hold the centre of ``button A`` while plugging CodeBug in. Transfer or edit your files like you would any other on your computer.
+To make CodeBug Connect appear as a USB drive, press and hold the centre of ``Joytick A`` while plugging CodeBug Connect in. Transfer or edit your files like you would any other on your computer.
 
 .. warning:: To avoid corrupting the files, never unplug CodeBug connect without
  first chosing eject or equivalent in your operating system.

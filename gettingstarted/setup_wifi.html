@@ -20,7 +20,7 @@
     
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Updating CodeBug" href="updating.html" />
+  <link rel="next" title="Remote Deployment" href="remotedeployment.html" />
   <link rel="prev" title="Quickstart" href="quickstart.html" /> 
   </head>
 
@@ -83,9 +83,27 @@
                 
                 <ul>
                     
-                    <li class="toctree-l2"><a href="#setting-up-wifi" class="reference internal">Setting Up WiFi</a></li>
+                    <li class="toctree-l2"><a href="#setting-up-wifi-though-a-web-browser" class="reference internal">Setting up WiFi though a web browser</a></li>
                     
                 </ul>
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="remotedeployment.html" class="reference internal ">Remote Deployment</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="onboardide.html" class="reference internal ">On-board IDE</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="samples.html" class="reference internal ">Sample</a>
+
                 
             </li>
 
@@ -136,8 +154,8 @@
            title="previous chapter">← Quickstart</a>
       </li>
       <li class="next">
-        <a href="updating.html"
-           title="next chapter">Updating CodeBug →</a>
+        <a href="remotedeployment.html"
+           title="next chapter">Remote Deployment →</a>
       </li>
     </ul>
     
@@ -147,6 +165,45 @@
             
   <div class="section" id="setting-up-wifi">
 <h1>Setting Up WiFi<a class="headerlink" href="#setting-up-wifi" title="Permalink to this headline">¶</a></h1>
+<p>By default CodeBug Connect has WiFi turned on. When CodeBug Connect starts up, it will try to connect to a wireless network. Unlike many similar devices CodeBug Connect stores a list of possible networks and will choose the strongest. If it can’t connect to one (for instance, none is available, or the network SSID or password is wrong), it will host its own Access Point for you to connect to it.</p>
+<p>You can configure WiFi either by editing the <code class="docutils literal notranslate"><span class="pre">wifi.cfg</span></code> file or through menus in a web browser. We recommend using a web browser.</p>
+<div class="section" id="setting-up-wifi-though-a-web-browser">
+<h2>Setting up WiFi though a web browser<a class="headerlink" href="#setting-up-wifi-though-a-web-browser" title="Permalink to this headline">¶</a></h2>
+<p>If you haven’t already set up WiFi you need to first connect to the access point hosted by CodeBug Connect.</p>
+<ol class="arabic">
+<li><p>Power on Codebug Connect.</p></li>
+<li><p>CodeBug Connect will scan for available networks, indicated by purple wifi scan.</p>
+<div class="figure align-center">
+<img alt="Wifi scan begin" src="../_images/WiFiScan.png" />
+</div>
+</li>
+<li><p>Assuming no suitable network is found, CodeBug Connect’s display will indicate this by briefly showing blue before starting an access point.</p>
+<div class="figure align-center">
+<img alt="Wifi not found" src="../_images/WiFiNotFound.png" />
+</div>
+</li>
+<li><p>CodeBug Connect will scroll in red <code class="docutils literal notranslate"><span class="pre">ap</span></code> followed by the name of it’s access point. The name will be <code class="docutils literal notranslate"><span class="pre">codebug_xxxxxxx</span></code> where x is a number or letter a-f. Perform a scan for wireless networks on your computer or smartphone and choose to connect to the corresponding <code class="docutils literal notranslate"><span class="pre">codebug_xxxxxxx</span></code> network.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you connect to your CodeBug Connect as an access point your laptop will no longer be connected to your old access point and as such may not have Internet access!</p>
+</div>
+</li>
+<li><p>Upon a successful connection CodeBug Connect will scroll an address beginning <code class="docutils literal notranslate"><span class="pre">http://</span></code> in green. Usually, this will be <code class="docutils literal notranslate"><span class="pre">http://192.168.4.1</span></code>.</p></li>
+<li><p>On your laptop of smart phone open a web browser and visit <a class="reference external" href="http://codebug.local">http://codebug.local</a> . This may not work for some operating systems, in which case you need to enter the green number that scrolled past (which will usually be <a class="reference external" href="http://192.168.4.1">http://192.168.4.1</a>)</p></li>
+<li><p>After a few seconds CodeBug Connect’s onboard IDE will load. Click the WiFi button on the top right.</p></li>
+<li><p>CodeBug Connect will scan for WiFi networks nearby. Choose your access point and enter your WiFi’s password.</p></li>
+<li><p>Wait for the window to reload. It should show the newly stored access point.</p></li>
+<li><p>Click reboot. You may need to reselect your usual WiFi access point for your laptop or smartphone.</p></li>
+<li><p>CodeBug Connect will now try and connect to the stored access point.</p></li>
+<li><p>If successful CodeBug Connect will briefly show green and then scroll the address CodeBug has been assigned by your router. You may need to make a note of this address if connecting to <a class="reference external" href="http://codebug.local">http://codebug.local</a> did not work earlier.</p></li>
+<li><p>You should now be able to connect to your CodeBug Connect on your local network by visiting <a class="reference external" href="http://codebug.local">http://codebug.local</a> or if that doesn’t work, the address you made a note of.</p></li>
+</ol>
+<p>From here you can run edit and debug program from CodeBug’s onboard IDE or deploy your projects remotely.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="remotedeployment.html"><span class="doc">Remote Deployment</span></a> guide.</p></li>
+<li><p><a class="reference internal" href="onboardide.html"><span class="doc">On-board IDE</span></a> guide.</p></li>
+</ul>
+</div>
 </div>
 
 
@@ -158,8 +215,8 @@
            title="previous chapter">← Quickstart</a>
       </li>
       <li class="next">
-        <a href="updating.html"
-           title="next chapter">Updating CodeBug →</a>
+        <a href="remotedeployment.html"
+           title="next chapter">Remote Deployment →</a>
       </li>
     </ul><div class="footer" role="contentinfo">
         &#169; Copyright 2020, OpenLX SP Ltd.
