@@ -21,7 +21,7 @@
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
   <link rel="next" title="Boot process" href="boot.html" />
-  <link rel="prev" title="Connection Modes" href="connection_modes.html" /> 
+  <link rel="prev" title="Updating CodeBug OS" href="../gettingstarted/updating.html" /> 
   </head>
 
   <body>
@@ -78,7 +78,7 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="../gettingstarted/setup_wifi.html" class="reference internal ">Setting Up WiFi</a>
+            <li class="toctree-l1 "><a href="../gettingstarted/setup_wifi.html" class="reference internal ">Joining an existing WiFi Network</a>
 
                 
             </li>
@@ -96,19 +96,19 @@
             </li>
 
             
+            <li class="toctree-l1 "><a href="connection_modes.html" class="reference internal ">Connecting to CodeBug Connect</a>
+
+                
+            </li>
+
+            
             <li class="toctree-l1 "><a href="../gettingstarted/samples.html" class="reference internal ">Sample Code</a>
 
                 
             </li>
 
             
-            <li class="toctree-l1 "><a href="../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
-
-                
-            </li>
-
-            
-            <li class="toctree-l1 "><a href="connection_modes.html" class="reference internal ">Connection Modes</a>
+            <li class="toctree-l1 "><a href="../gettingstarted/updating.html" class="reference internal ">Updating CodeBug OS</a>
 
                 
             </li>
@@ -156,8 +156,8 @@
   
     <ul class="page-nav">
       <li class="prev">
-        <a href="connection_modes.html"
-           title="previous chapter">← Connection Modes</a>
+        <a href="../gettingstarted/updating.html"
+           title="previous chapter">← Updating CodeBug OS</a>
       </li>
       <li class="next">
         <a href="boot.html"
@@ -171,14 +171,14 @@
             
   <div class="section" id="filesystem">
 <h1>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this headline">¶</a></h1>
-<p>CodeBug Connect has 1Mb of file storage which is accessible to your programs and via the <a class="reference internal" href="../gettingstarted/onboardide.html"><span class="doc">On-board IDE</span></a> over the network or as a USB disk <a class="reference internal" href="connection_modes.html"><span class="doc">Connection Modes</span></a></p>
+<p>CodeBug Connect has 1Mb of file storage which is accessible to your programs and via the <a class="reference internal" href="../gettingstarted/onboardide.html"><span class="doc">On-board IDE</span></a> over the network or as a USB disk <a class="reference internal" href="connection_modes.html"><span class="doc">Connecting to CodeBug Connect</span></a></p>
 <div class="section" id="filestructure">
 <h2>Filestructure<a class="headerlink" href="#filestructure" title="Permalink to this headline">¶</a></h2>
 <p>You are largely free to organise your files as you wish. However, CodeBug Connect makes use of the following files and directories:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">projects</span></code> contains separate folder for each project that was deployed from the CodeBug website.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">boot.py</span></code> first file that is run at boot. May be auto updated to run a project in the <code class="docutils literal notranslate"><span class="pre">projects</span></code> folder.  See <a class="reference internal" href="boot.html"><span class="doc">Boot process</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">wifi.cfg</span></code> contains list of WiFi access points. Passwords are extracted and not shown on subsequent boots. See <a class="reference internal" href="../gettingstarted/setup_wifi.html"><span class="doc">Setting Up WiFi</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wifi.cfg</span></code> contains list of WiFi access points. Passwords are extracted and not shown on subsequent boots. See <a class="reference internal" href="../gettingstarted/setup_wifi.html"><span class="doc">Joining an existing WiFi Network</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">config.json</span></code> contains boot settings. See <a class="reference internal" href="boot.html"><span class="doc">Boot process</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">adoption_key.dat</span></code> file downloaded from CodeBug website used to claim ownership and associate CodeBug Connect with user’s account. See <a class="reference internal" href="../gettingstarted/remotedeployment.html"><span class="doc">Remote Deployment</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">owner.txt</span></code> created as a result of successful adoption. Contains username of account on www.codebug.org.uk that has ownership</p></li>
@@ -192,8 +192,8 @@
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
       <li class="prev">
-        <a href="connection_modes.html"
-           title="previous chapter">← Connection Modes</a>
+        <a href="../gettingstarted/updating.html"
+           title="previous chapter">← Updating CodeBug OS</a>
       </li>
       <li class="next">
         <a href="boot.html"

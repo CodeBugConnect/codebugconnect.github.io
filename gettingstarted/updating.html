@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Updating CodeBug</title>
+      <title>Updating CodeBug OS</title>
     
       <link rel="stylesheet" href="../_static/pygments.css">
       <link rel="stylesheet" href="../_static/theme.css">
@@ -20,7 +20,7 @@
     
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Connection Modes" href="../detail/connection_modes.html" />
+  <link rel="next" title="Filesystem" href="../detail/filesystem.html" />
   <link rel="prev" title="Sample Code" href="samples.html" /> 
   </head>
 
@@ -78,7 +78,7 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="setup_wifi.html" class="reference internal ">Setting Up WiFi</a>
+            <li class="toctree-l1 "><a href="setup_wifi.html" class="reference internal ">Joining an existing WiFi Network</a>
 
                 
             </li>
@@ -96,13 +96,19 @@
             </li>
 
             
+            <li class="toctree-l1 "><a href="../detail/connection_modes.html" class="reference internal ">Connecting to CodeBug Connect</a>
+
+                
+            </li>
+
+            
             <li class="toctree-l1 "><a href="samples.html" class="reference internal ">Sample Code</a>
 
                 
             </li>
 
             
-            <li class="toctree-l1 current"><a href="#" class="reference internal current">Updating CodeBug</a>
+            <li class="toctree-l1 current"><a href="#" class="reference internal current">Updating CodeBug OS</a>
 
                 
                 <ul>
@@ -114,7 +120,7 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="../detail/connection_modes.html" class="reference internal ">Connection Modes</a>
+            <li class="toctree-l1 "><a href="../detail/filesystem.html" class="reference internal ">Filesystem</a>
 
                 
             </li>
@@ -144,7 +150,7 @@
     <ul class="breadcrumbs">
       <li><a href="../index.html">Docs</a> &raquo;</li>
       
-      <li>Updating CodeBug</li>
+      <li>Updating CodeBug OS</li>
     </ul>
     
   
@@ -154,8 +160,8 @@
            title="previous chapter">← Sample Code</a>
       </li>
       <li class="next">
-        <a href="../detail/connection_modes.html"
-           title="next chapter">Connection Modes →</a>
+        <a href="../detail/filesystem.html"
+           title="next chapter">Filesystem →</a>
       </li>
     </ul>
     
@@ -163,27 +169,39 @@
   <hr>
           <div class="content" role="main">
             
-  <div class="section" id="updating-codebug">
-<h1>Updating CodeBug<a class="headerlink" href="#updating-codebug" title="Permalink to this headline">¶</a></h1>
-<p>TODO introduction</p>
+  <div class="section" id="updating-codebug-os">
+<h1>Updating CodeBug OS<a class="headerlink" href="#updating-codebug-os" title="Permalink to this headline">¶</a></h1>
+<p>Occasionally, we may release an update to the core system for CodeBug Connect.
+While the update process is robust, it’s possible that without care you can corrupt the system files that make recovery slightly more difficult.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>We strongly recommend you read and make sure you understand all these instructions before perfoming an update.</p>
+</div>
+<p>The update process is done over the Internet so you must have setup a WiFi connection that provides Internet access to your CodeBug Connect.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>You must store a WiFi SSID and password before attempting to update.</p>
+<p>You must store a WiFi SSID and password before attempting to update. Once you set CodeBug Connect into update mode, you cannot easily setup the WiFi.</p>
 </div>
 <div class="section" id="update-process">
 <h2>Update Process<a class="headerlink" href="#update-process" title="Permalink to this headline">¶</a></h2>
-<p>Make sure you have stored your WiFi Access point and password in your Codebug Connect.
-Before attempting to upgrade you should check CodeBug can successfully connect to your WiFi.</p>
+<p>Make sure you have stored your WiFi Access point and password in your Codebug Connect.  Before attempting to upgrade you should double check CodeBug can successfully connect to your WiFi.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Always backup your files before updating CodeBug Connect.</p>
 </div>
 <p>To update CodeBug, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>From a terminal (either over USB serial or via the onboard IDE) enter the following</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">remote_manage</span>
+<span class="n">remote_manage</span><span class="o">.</span><span class="n">reboot_into_update</span><span class="p">()</span>
+</pre></div>
+</div>
 <ol class="arabic">
-<li><p>TODO enter the command to set CodeBug to update.</p></li>
-<li><p>Remove the power.</p></li>
+<li><p>read and follow the instructions displayed. Enter <code class="docutils literal notranslate"><span class="pre">yes</span></code> if approriate.</p></li>
+<li><p>When prompted, remove the power.</p></li>
 <li><p>Wait for 2 seconds and then reconnect power.</p></li>
-<li><p>CodeBug Connect will display light yellow searching for WiFi.</p>
+<li><p>CodeBug Connect will flash a light yellow searching for WiFi. Note the symbol is backwards compared with CodeBug Connect’s normal searching for WiFi symbol.</p>
 <img alt="Scanning for WiFi1" src="../_images/UpdateScan1.png" />
 <img alt="Scanning for WiFi2" src="../_images/UpdateScan2.png" />
 <img alt="Scanning for WiFi3" src="../_images/UpdateScan3.png" />
@@ -191,16 +209,25 @@ Before attempting to upgrade you should check CodeBug can successfully connect t
 <li><p>Once network has been found CodeBug Connect will indicate successful WiFi connection.</p>
 <img alt="WiFi connected" src="../_images/WiFiConnectSuccess.png" />
 </li>
-<li><p>CodeBug Connect will attempt to connect to the update server.</p></li>
-<li><p>TODO Download</p></li>
-<li><p>TODO Complete, restart</p></li>
+<li><p>CodeBug Connect will attempt to connect to the update server and indicate if successful.</p></li>
+<li><p>Beginning from the top left, the LED display will fill with yellow dots to indicate download process. This sometimes has a slow start so be patient.</p></li>
+<li><p>CodeBug Connect will process the new system files, and if successful, display a green smile for a few seconds before restarting.</p></li>
 </ol>
 <div class="section" id="troubleshooting">
 <h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h3>
+<p>If the update process fails, the LEDs show the failure reason. If no data was download then on next reboot CodeBug Connect will return to run mode with the old system files. However, once a download commences the system files will have been over-written and CodeBug Connect will not boot until a successful update is achieved.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In update mode, USB Drive and the on-board IDE modes are not available.</p>
+</div>
+<ul class="simple">
+<li><p>WiFi connection failed (e.g. password error)</p></li>
+</ul>
 <img alt="WiFi connection failed" src="../_images/WiFiConnectFail.png" />
+<ul class="simple">
+<li><p>Could not find any suitable WiFi to connect to</p></li>
+</ul>
 <img alt="could not find any suitable WiFi" src="../_images/NoWiFiFound.png" />
-<p>connection failed
-download corrupt</p>
 </div>
 </div>
 </div>
@@ -214,8 +241,8 @@ download corrupt</p>
            title="previous chapter">← Sample Code</a>
       </li>
       <li class="next">
-        <a href="../detail/connection_modes.html"
-           title="next chapter">Connection Modes →</a>
+        <a href="../detail/filesystem.html"
+           title="next chapter">Filesystem →</a>
       </li>
     </ul><div class="footer" role="contentinfo">
         &#169; Copyright 2020, OpenLX SP Ltd.

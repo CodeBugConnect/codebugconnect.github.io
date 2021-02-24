@@ -6,6 +6,7 @@ CodeBug Connect Specific Programming Reference
    :maxdepth: 2
    :caption: Contents:
 
+   display
    color
    drawable
    demos

@@ -20,7 +20,7 @@
     
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Sample Code" href="samples.html" />
+  <link rel="next" title="Connecting to CodeBug Connect" href="../detail/connection_modes.html" />
   <link rel="prev" title="On-board IDE" href="onboardide.html" /> 
   </head>
 
@@ -78,7 +78,7 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="setup_wifi.html" class="reference internal ">Setting Up WiFi</a>
+            <li class="toctree-l1 "><a href="setup_wifi.html" class="reference internal ">Joining an existing WiFi Network</a>
 
                 
             </li>
@@ -95,9 +95,15 @@
                 
                 <ul>
                     
-                    <li class="toctree-l2"><a href="#remote-deployment" class="reference internal">Remote Deployment</a></li>
+                    <li class="toctree-l2"><a href="#adoption" class="reference internal">Adoption</a></li>
                     
                 </ul>
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../detail/connection_modes.html" class="reference internal ">Connecting to CodeBug Connect</a>
+
                 
             </li>
 
@@ -108,13 +114,13 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="updating.html" class="reference internal ">Updating CodeBug</a>
+            <li class="toctree-l1 "><a href="updating.html" class="reference internal ">Updating CodeBug OS</a>
 
                 
             </li>
 
             
-            <li class="toctree-l1 "><a href="../detail/connection_modes.html" class="reference internal ">Connection Modes</a>
+            <li class="toctree-l1 "><a href="../detail/filesystem.html" class="reference internal ">Filesystem</a>
 
                 
             </li>
@@ -154,8 +160,8 @@
            title="previous chapter">← On-board IDE</a>
       </li>
       <li class="next">
-        <a href="samples.html"
-           title="next chapter">Sample Code →</a>
+        <a href="../detail/connection_modes.html"
+           title="next chapter">Connecting to CodeBug Connect →</a>
       </li>
     </ul>
     
@@ -165,6 +171,27 @@
             
   <div class="section" id="remote-deployment">
 <h1>Remote Deployment<a class="headerlink" href="#remote-deployment" title="Permalink to this headline">¶</a></h1>
+<p>CodeBug Connect can automatically fetch and then run projects from the CodeBug Website. However, so that only you have remote access to your CodeBug Connect you first need to associate it with your CodeBug website account. This process is known as adoption. As you’d probably expect, if you want to deploy remotely over the Internet your CodeBug Connect needs access to the Internet via a WiFi network. For details about setting up WiFi see <a class="reference internal" href="setup_wifi.html"><span class="doc">Joining an existing WiFi Network</span></a>.</p>
+<div class="section" id="adoption">
+<h2>Adoption<a class="headerlink" href="#adoption" title="Permalink to this headline">¶</a></h2>
+<p>CodeBug Connects can only be adopted by one account at once. By default they become locked to that account to prevent them from being taken over by someone else (though it is possible to manual unlock them). To adopt a CodeBug Connect, you need to put an adoption key onto the file system. You can adopt multiple CodeBug Connects to your account using the same adoption key.</p>
+<ol class="arabic simple">
+<li><p>Visit <a href="https://www.codebug.org.uk/newide/adoptionkey/" target="_blank">CodeBug Connect Adoption</a> page and, if not already, login from the account you wish to do the adoption.</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Key</span></code>. You should obtain a file <code class="docutils literal notranslate"><span class="pre">adoption_key.dat</span></code>.</p></li>
+<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">adoption_key.dat</span></code> file into the top level directory of your CodeBug Connect. Follow the instructions in <a class="reference internal" href="quickstart.html"><span class="doc">Quickstart</span></a> about transferring files.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure that the file name matches <code class="docutils literal notranslate"><span class="pre">adoption_key.dat</span></code> and your web browser has not renamed it to <code class="docutils literal notranslate"><span class="pre">adoption_key-1.dat</span></code> or similar, as these will not work.</p>
+</div>
+<ol class="arabic simple">
+<li><p>After ejecting (or for some operating systems unmounting) the CodeBug Connect USB disk unplug and remove power.</p></li>
+<li><p>Re-apply power and your CodeBug Connect will reboot and try and associate itself with the CodeBug website. Wait until you see s green downward arrow.</p></li>
+<li><p>Check your CodeBug Connect has been successfully adopted. If successful your CodeBug Connect will be listed on the <a href="https://www.codebug.org.uk/newide/devices" target="_blank">My CodeBug Connects</a> page of the website and your username should be stored on your CodeBug Connect’s filesystem in the file <code class="docutils literal notranslate"><span class="pre">owner.txt</span></code>.</p></li>
+</ol>
+</div>
 </div>
 
 
@@ -176,8 +203,8 @@
            title="previous chapter">← On-board IDE</a>
       </li>
       <li class="next">
-        <a href="samples.html"
-           title="next chapter">Sample Code →</a>
+        <a href="../detail/connection_modes.html"
+           title="next chapter">Connecting to CodeBug Connect →</a>
       </li>
     </ul><div class="footer" role="contentinfo">
         &#169; Copyright 2020, OpenLX SP Ltd.

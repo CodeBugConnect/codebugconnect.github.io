@@ -15,9 +15,9 @@ Welcome to CodeBug Connect's documentation!
    gettingstarted/setup_wifi
    gettingstarted/onboardide
    gettingstarted/remotedeployment
+   detail/connection_modes
    gettingstarted/samples
    gettingstarted/updating
-   detail/connection_modes
    detail/filesystem
    detail/boot
    reference/modules

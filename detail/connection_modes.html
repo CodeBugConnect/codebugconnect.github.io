@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Connection Modes</title>
+      <title>Connecting to CodeBug Connect</title>
     
       <link rel="stylesheet" href="../_static/pygments.css">
       <link rel="stylesheet" href="../_static/theme.css">
@@ -20,8 +20,8 @@
     
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Boot process" href="boot.html" />
-  <link rel="prev" title="Updating CodeBug" href="../gettingstarted/updating.html" /> 
+  <link rel="next" title="Sample Code" href="../gettingstarted/samples.html" />
+  <link rel="prev" title="Remote Deployment" href="../gettingstarted/remotedeployment.html" /> 
   </head>
 
   <body>
@@ -78,7 +78,7 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="../gettingstarted/setup_wifi.html" class="reference internal ">Setting Up WiFi</a>
+            <li class="toctree-l1 "><a href="../gettingstarted/setup_wifi.html" class="reference internal ">Joining an existing WiFi Network</a>
 
                 
             </li>
@@ -96,28 +96,36 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="../gettingstarted/samples.html" class="reference internal ">Sample Code</a>
-
-                
-            </li>
-
-            
-            <li class="toctree-l1 "><a href="../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
-
-                
-            </li>
-
-            
-            <li class="toctree-l1 current"><a href="#" class="reference internal current">Connection Modes</a>
+            <li class="toctree-l1 current"><a href="#" class="reference internal current">Connecting to CodeBug Connect</a>
 
                 
                 <ul>
                     
                     <li class="toctree-l2"><a href="#connecting-using-wifi" class="reference internal">Connecting using WiFi</a></li>
                     
-                    <li class="toctree-l2"><a href="#connecting-with-usb" class="reference internal">Connecting with USB</a></li>
+                    <li class="toctree-l2"><a href="#connect-as-usb-disk" class="reference internal">Connect as USB disk</a></li>
+                    
+                    <li class="toctree-l2"><a href="#connect-as-usb-serial-port" class="reference internal">Connect as USB serial port</a></li>
                     
                 </ul>
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../gettingstarted/samples.html" class="reference internal ">Sample Code</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../gettingstarted/updating.html" class="reference internal ">Updating CodeBug OS</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="filesystem.html" class="reference internal ">Filesystem</a>
+
                 
             </li>
 
@@ -146,18 +154,18 @@
     <ul class="breadcrumbs">
       <li><a href="../index.html">Docs</a> &raquo;</li>
       
-      <li>Connection Modes</li>
+      <li>Connecting to CodeBug Connect</li>
     </ul>
     
   
     <ul class="page-nav">
       <li class="prev">
-        <a href="../gettingstarted/updating.html"
-           title="previous chapter">← Updating CodeBug</a>
+        <a href="../gettingstarted/remotedeployment.html"
+           title="previous chapter">← Remote Deployment</a>
       </li>
       <li class="next">
-        <a href="boot.html"
-           title="next chapter">Boot process →</a>
+        <a href="../gettingstarted/samples.html"
+           title="next chapter">Sample Code →</a>
       </li>
     </ul>
     
@@ -165,8 +173,8 @@
   <hr>
           <div class="content" role="main">
             
-  <div class="section" id="connection-modes">
-<h1>Connection Modes<a class="headerlink" href="#connection-modes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="connecting-to-codebug-connect">
+<h1>Connecting to CodeBug Connect<a class="headerlink" href="#connecting-to-codebug-connect" title="Permalink to this headline">¶</a></h1>
 <p>CodeBug Connect has 1MB of inbuilt storage for programs and data. You can access these files to add or update your programs or access data you’ve collected:</p>
 <ul class="simple">
 <li><p>over USB, with CodeBug Connect appearing as a removable disk drive</p></li>
@@ -201,11 +209,8 @@ it connects to CodeBug’s access point, neither your computer nor CodeBug will 
 <p>Read more about using accessing CodeBug Connect over WiFi <a class="reference internal" href="../gettingstarted/onboardide.html"><span class="doc">On-board IDE</span></a>.</p>
 </div>
 </div>
-<div class="section" id="connecting-with-usb">
-<h2>Connecting with USB<a class="headerlink" href="#connecting-with-usb" title="Permalink to this headline">¶</a></h2>
-<p>CodeBug Connect can appear as USB drive or USB serial port.</p>
-<div class="section" id="usb-drive">
-<h3>USB drive<a class="headerlink" href="#usb-drive" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="connect-as-usb-disk">
+<h2>Connect as USB disk<a class="headerlink" href="#connect-as-usb-disk" title="Permalink to this headline">¶</a></h2>
 <p>To make CodeBug Connect appear as a USB drive, press and hold the centre of <code class="docutils literal notranslate"><span class="pre">Joytick</span> <span class="pre">A</span></code> while plugging CodeBug Connect in. Transfer or edit your files like you would any other on your computer.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -218,15 +223,13 @@ first chosing eject or equivalent in your operating system.</p>
 <p>CodeBug Connect can hold many files and programs, so needs to be told which one to run at boot. See <a class="reference internal" href="boot.html"><span class="doc">Boot process</span></a> for more information.</p>
 </div>
 </div>
-<div class="section" id="usb-serial-port">
-<h3>USB serial port<a class="headerlink" href="#usb-serial-port" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="connect-as-usb-serial-port">
+<h2>Connect as USB serial port<a class="headerlink" href="#connect-as-usb-serial-port" title="Permalink to this headline">¶</a></h2>
 <p>Whenever CodeBug Connect is plugged into a USB port it appears as a virtual serial port. This allows you to use the Python REPL to see debug messages and interactively run Python.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is hoped that a plugin will be developed for thonny IDE <a class="reference external" href="https://github.com/thonny/thonny/wiki/Plugins">https://github.com/thonny/thonny/wiki/Plugins</a> or Visual Studio Code.</p>
 </div>
-<div class="section" id="linux">
-<h4>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
 <p>On Linux (including Raspberry Pi) CodeBug Connect Virtual Serial will typically appear as <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code>. Typing <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> in a terminal or <code class="docutils literal notranslate"><span class="pre">lsusb</span></code> before and after plugging in your CodeBug Connect may show logging information that helps identify it.</p>
 <p>You can use any terminal program to connect to the serial port. For example to use <code class="docutils literal notranslate"><span class="pre">minicom</span></code>, you can install it by typing into a terminal:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo apt install minicom
@@ -240,12 +243,7 @@ first chosing eject or equivalent in your operating system.</p>
 <p class="admonition-title">Note</p>
 <p>Exit minicom by typing <code class="docutils literal notranslate"><span class="pre">CTRL-A</span></code> followed by <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
 </div>
-</div>
-<div class="section" id="windows">
-<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
 <p>On Windows CodeBug Connect Virtual Serial will appear as a COM port. Use Tera Term or PuTTY and connect with the approriate COM port with a baud rate of 115200, 8-bits of data, no Parity, 1 stop bit and no flow control.</p>
-</div>
-</div>
 </div>
 </div>
 
@@ -254,12 +252,12 @@ first chosing eject or equivalent in your operating system.</p>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
       <li class="prev">
-        <a href="../gettingstarted/updating.html"
-           title="previous chapter">← Updating CodeBug</a>
+        <a href="../gettingstarted/remotedeployment.html"
+           title="previous chapter">← Remote Deployment</a>
       </li>
       <li class="next">
-        <a href="boot.html"
-           title="next chapter">Boot process →</a>
+        <a href="../gettingstarted/samples.html"
+           title="next chapter">Sample Code →</a>
       </li>
     </ul><div class="footer" role="contentinfo">
         &#169; Copyright 2020, OpenLX SP Ltd.
