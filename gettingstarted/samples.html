@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Sample</title>
+      <title>Sample Code</title>
     
       <link rel="stylesheet" href="../_static/pygments.css">
       <link rel="stylesheet" href="../_static/theme.css">
@@ -21,7 +21,7 @@
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
   <link rel="next" title="Updating CodeBug" href="updating.html" />
-  <link rel="prev" title="On-board IDE" href="onboardide.html" /> 
+  <link rel="prev" title="Remote Deployment" href="remotedeployment.html" /> 
   </head>
 
   <body>
@@ -84,24 +84,24 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="remotedeployment.html" class="reference internal ">Remote Deployment</a>
-
-                
-            </li>
-
-            
             <li class="toctree-l1 "><a href="onboardide.html" class="reference internal ">On-board IDE</a>
 
                 
             </li>
 
             
-            <li class="toctree-l1 current"><a href="#" class="reference internal current">Sample</a>
+            <li class="toctree-l1 "><a href="remotedeployment.html" class="reference internal ">Remote Deployment</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 current"><a href="#" class="reference internal current">Sample Code</a>
 
                 
                 <ul>
                     
-                    <li class="toctree-l2"><a href="#sample" class="reference internal">Sample</a></li>
+                    <li class="toctree-l2"><a href="#cheer-lights" class="reference internal">Cheer lights</a></li>
                     
                 </ul>
                 
@@ -144,14 +144,14 @@
     <ul class="breadcrumbs">
       <li><a href="../index.html">Docs</a> &raquo;</li>
       
-      <li>Sample</li>
+      <li>Sample Code</li>
     </ul>
     
   
     <ul class="page-nav">
       <li class="prev">
-        <a href="onboardide.html"
-           title="previous chapter">← On-board IDE</a>
+        <a href="remotedeployment.html"
+           title="previous chapter">← Remote Deployment</a>
       </li>
       <li class="next">
         <a href="updating.html"
@@ -163,16 +163,22 @@
   <hr>
           <div class="content" role="main">
             
-  <div class="section" id="sample">
-<h1>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h1>
-<p>import cbc
-import cbc.network
-from cbc import Color</p>
-<dl class="simple">
-<dt>def on_event(e):</dt><dd><p>cbc.display.pixels[0,2] = Color(e.decode())</p>
-</dd>
-</dl>
-<p>ws = cbc.network.WebSocketClient(url=”ws://cheerlights.codebug.org.uk/cheer/”, on_data=on_event)</p>
+  <div class="section" id="sample-code">
+<h1>Sample Code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cheer-lights">
+<h2>Cheer lights<a class="headerlink" href="#cheer-lights" title="Permalink to this headline">¶</a></h2>
+<p>Tweet &#64;cheerlights a colour and see your CodeBug Connect change colour. (You must have successfully setup a WiFi connection first)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cbc</span>
+<span class="kn">import</span> <span class="nn">cbc.network</span>
+<span class="kn">from</span> <span class="nn">cbc</span> <span class="kn">import</span> <span class="n">Color</span>
+
+<span class="k">def</span> <span class="nf">on_event</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+    <span class="n">cbc</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+<span class="n">ws</span> <span class="o">=</span> <span class="n">cbc</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">WebSocketClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;ws://cheerlights.codebug.org.uk/cheer/&quot;</span><span class="p">,</span> <span class="n">on_data</span><span class="o">=</span><span class="n">on_event</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -180,8 +186,8 @@ from cbc import Color</p>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
       <li class="prev">
-        <a href="onboardide.html"
-           title="previous chapter">← On-board IDE</a>
+        <a href="remotedeployment.html"
+           title="previous chapter">← Remote Deployment</a>
       </li>
       <li class="next">
         <a href="updating.html"

@@ -84,6 +84,24 @@
             </li>
 
             
+            <li class="toctree-l1 "><a href="../../gettingstarted/onboardide.html" class="reference internal ">On-board IDE</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/remotedeployment.html" class="reference internal ">Remote Deployment</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../../gettingstarted/samples.html" class="reference internal ">Sample Code</a>
+
+                
+            </li>
+
+            
             <li class="toctree-l1 "><a href="../../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
 
                 
@@ -356,7 +374,7 @@ Objects created by this constructor can be mounted using <a class="reference int
 Storage of the littlefs filesystem is provided by <em>block_dev</em>, which must
 support the <a class="reference internal" href="#block-device-interface"><span class="std std-ref">extended interface</span></a>.
 Objects created by this constructor can be mounted using <a class="reference internal" href="#uos.mount" title="uos.mount"><code class="xref py py-func docutils literal notranslate"><span class="pre">mount()</span></code></a>.</p>
-<p>See <span class="xref std std-ref">filesystem</span> for more information.</p>
+<p>See <a class="reference internal" href="../../detail/filesystem.html#filesystem"><span class="std std-ref">Filesystem</span></a> for more information.</p>
 <dl class="py method">
 <dt id="uos.VfsLfs1.mkfs">
 <em class="property">static </em><code class="sig-name descname">mkfs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_dev</span></em>, <em class="sig-param"><span class="n">readsize</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">progsize</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">lookahead</span><span class="o">=</span><span class="default_value">32</span></em><span class="sig-paren">)</span><a class="headerlink" href="#uos.VfsLfs1.mkfs" title="Permalink to this definition">¶</a></dt>
@@ -384,7 +402,7 @@ otherwise the timestamps will remain untouched.  Littlefs v2 filesystems without
 timestamps will work without reformatting and timestamps will be added
 transparently to existing files once they are opened for writing.  When <em>mtime</em>
 is enabled <cite>uos.stat</cite> on files without timestamps will return 0 for the timestamp.</p>
-<p>See <span class="xref std std-ref">filesystem</span> for more information.</p>
+<p>See <a class="reference internal" href="../../detail/filesystem.html#filesystem"><span class="std std-ref">Filesystem</span></a> for more information.</p>
 <dl class="py method">
 <dt id="uos.VfsLfs2.mkfs">
 <em class="property">static </em><code class="sig-name descname">mkfs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_dev</span></em>, <em class="sig-param"><span class="n">readsize</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">progsize</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">lookahead</span><span class="o">=</span><span class="default_value">32</span></em><span class="sig-paren">)</span><a class="headerlink" href="#uos.VfsLfs2.mkfs" title="Permalink to this definition">¶</a></dt>
@@ -410,7 +428,7 @@ but an actual block device class must implement the methods described below.</p>
 memory-like functionality of a piece of hardware (like flash memory). A block
 device can be formatted to any supported filesystem and mounted using <code class="docutils literal notranslate"><span class="pre">uos</span></code>
 methods.</p>
-<p>See <span class="xref std std-ref">filesystem</span> for example implementations of block devices using the
+<p>See <a class="reference internal" href="../../detail/filesystem.html#filesystem"><span class="std std-ref">Filesystem</span></a> for example implementations of block devices using the
 two variants of the block protocol described below.</p>
 <div class="section" id="simple-and-extended-interface">
 <span id="block-device-interface"></span><h3>Simple and extended interface<a class="headerlink" href="#simple-and-extended-interface" title="Permalink to this headline">¶</a></h3>

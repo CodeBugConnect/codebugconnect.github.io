@@ -13,11 +13,12 @@ Welcome to CodeBug Connect's documentation!
 
    gettingstarted/quickstart
    gettingstarted/setup_wifi
-   gettingstarted/remotedeployment
    gettingstarted/onboardide
+   gettingstarted/remotedeployment
    gettingstarted/samples
    gettingstarted/updating
    detail/connection_modes
+   detail/filesystem
    detail/boot
    reference/modules
 

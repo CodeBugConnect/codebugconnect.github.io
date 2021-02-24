@@ -5,7 +5,8 @@ Connection Modes
 CodeBug Connect has 1MB of inbuilt storage for programs and data. You can access these files to add or update your programs or access data you've collected:
 
 * over USB, with CodeBug Connect appearing as a removable disk drive
-* with a direct connection to your CodeBug Connect with your web browser over WiFi (Internet connection not required).
+* with a direct connection to your CodeBug Connect with your web browser over WiFi (Internet connection not required)
+* over USB as a virtual serial port
 
 
 Connecting using WiFi
@@ -37,11 +38,16 @@ the username and password of the access point you want CodeBug to connect to.
 .. note:: If your computer is usually connected to the Internet over WiFi, when 
  it connects to CodeBug's access point, neither your computer nor CodeBug will be able to access the Internet.
 
-Read more about using accessing CodeBug Connect over a :doc:`network`.
+Read more about using accessing CodeBug Connect over WiFi :doc:`../gettingstarted/onboardide`.
 
 
 Connecting with USB
 ===================
+
+CodeBug Connect can appear as USB drive or USB serial port.
+
+USB drive
+---------
 
 To make CodeBug Connect appear as a USB drive, press and hold the centre of ``Joytick A`` while plugging CodeBug Connect in. Transfer or edit your files like you would any other on your computer.
 
@@ -51,3 +57,35 @@ To make CodeBug Connect appear as a USB drive, press and hold the centre of ``Jo
 While in USB mode, CodeBug will not run your program until it reboots into Run mode. This is to remove the risk of filesystem corruption if it were to be accessed by both your programs and via USB at the same time. As such, after transferring files you must safely eject and then unplug and replug your  CodeBug Connect for it to run your program. 
 
 .. note:: CodeBug Connect can hold many files and programs, so needs to be told which one to run at boot. See :doc:`boot` for more information.
+
+
+USB serial port
+---------------
+
+Whenever CodeBug Connect is plugged into a USB port it appears as a virtual serial port. This allows you to use the Python REPL to see debug messages and interactively run Python.
+
+.. note:: It is hoped that a plugin will be developed for thonny IDE https://github.com/thonny/thonny/wiki/Plugins or Visual Studio Code.
+
+Linux
+^^^^^
+
+On Linux (including Raspberry Pi) CodeBug Connect Virtual Serial will typically appear as ``/dev/ttyACM0``. Typing ``dmesg`` in a terminal or ``lsusb`` before and after plugging in your CodeBug Connect may show logging information that helps identify it.
+
+You can use any terminal program to connect to the serial port. For example to use ``minicom``, you can install it by typing into a terminal:
+
+.. code-block:: sh
+
+   $ sudo apt install minicom
+
+and then to use it to connect, type:
+
+.. code-block:: sh
+
+   $ minicom -b 115200 -o -D /dev/ttyACM0
+
+.. note:: Exit minicom by typing ``CTRL-A`` followed by ``X``.
+
+Windows
+^^^^^^^
+
+On Windows CodeBug Connect Virtual Serial will appear as a COM port. Use Tera Term or PuTTY and connect with the approriate COM port with a baud rate of 115200, 8-bits of data, no Parity, 1 stop bit and no flow control.

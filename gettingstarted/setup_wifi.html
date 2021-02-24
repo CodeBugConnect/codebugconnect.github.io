@@ -20,7 +20,7 @@
     
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Remote Deployment" href="remotedeployment.html" />
+  <link rel="next" title="On-board IDE" href="onboardide.html" />
   <link rel="prev" title="Quickstart" href="quickstart.html" /> 
   </head>
 
@@ -85,13 +85,9 @@
                     
                     <li class="toctree-l2"><a href="#setting-up-wifi-though-a-web-browser" class="reference internal">Setting up WiFi though a web browser</a></li>
                     
+                    <li class="toctree-l2"><a href="#setting-up-wifi-over-usb-filestore" class="reference internal">Setting up WiFi over USB filestore</a></li>
+                    
                 </ul>
-                
-            </li>
-
-            
-            <li class="toctree-l1 "><a href="remotedeployment.html" class="reference internal ">Remote Deployment</a>
-
                 
             </li>
 
@@ -102,7 +98,13 @@
             </li>
 
             
-            <li class="toctree-l1 "><a href="samples.html" class="reference internal ">Sample</a>
+            <li class="toctree-l1 "><a href="remotedeployment.html" class="reference internal ">Remote Deployment</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="samples.html" class="reference internal ">Sample Code</a>
 
                 
             </li>
@@ -154,8 +156,8 @@
            title="previous chapter">← Quickstart</a>
       </li>
       <li class="next">
-        <a href="remotedeployment.html"
-           title="next chapter">Remote Deployment →</a>
+        <a href="onboardide.html"
+           title="next chapter">On-board IDE →</a>
       </li>
     </ul>
     
@@ -182,7 +184,7 @@
 <img alt="Wifi not found" src="../_images/WiFiNotFound.png" />
 </div>
 </li>
-<li><p>CodeBug Connect will scroll in red <code class="docutils literal notranslate"><span class="pre">ap</span></code> followed by the name of it’s access point. The name will be <code class="docutils literal notranslate"><span class="pre">codebug_xxxxxxx</span></code> where x is a number or letter a-f. Perform a scan for wireless networks on your computer or smartphone and choose to connect to the corresponding <code class="docutils literal notranslate"><span class="pre">codebug_xxxxxxx</span></code> network.</p>
+<li><p>CodeBug Connect will scroll in red <cite>ap</cite> followed by the name of its access point. The name will be <code class="docutils literal notranslate"><span class="pre">codebug_xxxxxxx</span></code> where x is a number or letter a-f. Perform a scan for wireless networks on your computer or smartphone and choose to connect to the corresponding <code class="docutils literal notranslate"><span class="pre">codebug_xxxxxxx</span></code> network.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When you connect to your CodeBug Connect as an access point your laptop will no longer be connected to your old access point and as such may not have Internet access!</p>
@@ -204,6 +206,28 @@
 <li><p><a class="reference internal" href="onboardide.html"><span class="doc">On-board IDE</span></a> guide.</p></li>
 </ul>
 </div>
+<div class="section" id="setting-up-wifi-over-usb-filestore">
+<h2>Setting up WiFi over USB filestore<a class="headerlink" href="#setting-up-wifi-over-usb-filestore" title="Permalink to this headline">¶</a></h2>
+<p>If you can’t or don’t want to setup a WiFi connection with your web browser, you edit the <code class="docutils literal notranslate"><span class="pre">wifi.cfg</span></code> file instead.</p>
+<ol class="arabic">
+<li><p>Disconnect CodeBug Connect from all power sources.</p></li>
+<li><p>Press and hold the centre of Joystick A in while plugging CodeBug Connect into your computer’s USB port. Keep it held until <cite>USB</cite> scrolls across in yellow. CodeBug Connect will show a yellow file icon when ready.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some computers, particularly Apple Macs, may take a few seconds to recognise CodeBug Connect as a disk.</p>
+</div>
+</li>
+<li><p>In your operating system’s file manager navigate to CodeBug Connect and open <code class="docutils literal notranslate"><span class="pre">wifi.cfg</span></code> in a text editor.</p></li>
+<li><p>Add a new line with the name of your WiFi network and your WiFi password. You must enclose the network name and password each in <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and separate them with <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<p>For example if your network was called <code class="docutils literal notranslate"><span class="pre">home_wifi</span></code> and it’s password was <code class="docutils literal notranslate"><span class="pre">pw123</span></code> then you would add the following into <code class="docutils literal notranslate"><span class="pre">wifi.cfg</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;home_wifi&quot;,&quot;pw123&quot;</span></code></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first time CodeBug Connect reboots after you have edited <code class="docutils literal notranslate"><span class="pre">wifi.cfg</span></code> it will extract your password and replace it with <code class="docutils literal notranslate"><span class="pre">*</span></code>. This is to prevent the password being easily visible in the file.</p>
+</div>
+</div>
 </div>
 
 
@@ -215,8 +239,8 @@
            title="previous chapter">← Quickstart</a>
       </li>
       <li class="next">
-        <a href="remotedeployment.html"
-           title="next chapter">Remote Deployment →</a>
+        <a href="onboardide.html"
+           title="next chapter">On-board IDE →</a>
       </li>
     </ul><div class="footer" role="contentinfo">
         &#169; Copyright 2020, OpenLX SP Ltd.

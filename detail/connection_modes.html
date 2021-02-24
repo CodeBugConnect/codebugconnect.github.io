@@ -84,6 +84,24 @@
             </li>
 
             
+            <li class="toctree-l1 "><a href="../gettingstarted/onboardide.html" class="reference internal ">On-board IDE</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../gettingstarted/remotedeployment.html" class="reference internal ">Remote Deployment</a>
+
+                
+            </li>
+
+            
+            <li class="toctree-l1 "><a href="../gettingstarted/samples.html" class="reference internal ">Sample Code</a>
+
+                
+            </li>
+
+            
             <li class="toctree-l1 "><a href="../gettingstarted/updating.html" class="reference internal ">Updating CodeBug</a>
 
                 
@@ -152,7 +170,8 @@
 <p>CodeBug Connect has 1MB of inbuilt storage for programs and data. You can access these files to add or update your programs or access data you’ve collected:</p>
 <ul class="simple">
 <li><p>over USB, with CodeBug Connect appearing as a removable disk drive</p></li>
-<li><p>with a direct connection to your CodeBug Connect with your web browser over WiFi (Internet connection not required).</p></li>
+<li><p>with a direct connection to your CodeBug Connect with your web browser over WiFi (Internet connection not required)</p></li>
+<li><p>over USB as a virtual serial port</p></li>
 </ul>
 <div class="section" id="connecting-using-wifi">
 <h2>Connecting using WiFi<a class="headerlink" href="#connecting-using-wifi" title="Permalink to this headline">¶</a></h2>
@@ -179,11 +198,14 @@ the username and password of the access point you want CodeBug to connect to.</p
 <p>If your computer is usually connected to the Internet over WiFi, when
 it connects to CodeBug’s access point, neither your computer nor CodeBug will be able to access the Internet.</p>
 </div>
-<p>Read more about using accessing CodeBug Connect over a <span class="xref std std-doc">network</span>.</p>
+<p>Read more about using accessing CodeBug Connect over WiFi <a class="reference internal" href="../gettingstarted/onboardide.html"><span class="doc">On-board IDE</span></a>.</p>
 </div>
 </div>
 <div class="section" id="connecting-with-usb">
 <h2>Connecting with USB<a class="headerlink" href="#connecting-with-usb" title="Permalink to this headline">¶</a></h2>
+<p>CodeBug Connect can appear as USB drive or USB serial port.</p>
+<div class="section" id="usb-drive">
+<h3>USB drive<a class="headerlink" href="#usb-drive" title="Permalink to this headline">¶</a></h3>
 <p>To make CodeBug Connect appear as a USB drive, press and hold the centre of <code class="docutils literal notranslate"><span class="pre">Joytick</span> <span class="pre">A</span></code> while plugging CodeBug Connect in. Transfer or edit your files like you would any other on your computer.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -194,6 +216,35 @@ first chosing eject or equivalent in your operating system.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>CodeBug Connect can hold many files and programs, so needs to be told which one to run at boot. See <a class="reference internal" href="boot.html"><span class="doc">Boot process</span></a> for more information.</p>
+</div>
+</div>
+<div class="section" id="usb-serial-port">
+<h3>USB serial port<a class="headerlink" href="#usb-serial-port" title="Permalink to this headline">¶</a></h3>
+<p>Whenever CodeBug Connect is plugged into a USB port it appears as a virtual serial port. This allows you to use the Python REPL to see debug messages and interactively run Python.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is hoped that a plugin will be developed for thonny IDE <a class="reference external" href="https://github.com/thonny/thonny/wiki/Plugins">https://github.com/thonny/thonny/wiki/Plugins</a> or Visual Studio Code.</p>
+</div>
+<div class="section" id="linux">
+<h4>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
+<p>On Linux (including Raspberry Pi) CodeBug Connect Virtual Serial will typically appear as <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code>. Typing <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> in a terminal or <code class="docutils literal notranslate"><span class="pre">lsusb</span></code> before and after plugging in your CodeBug Connect may show logging information that helps identify it.</p>
+<p>You can use any terminal program to connect to the serial port. For example to use <code class="docutils literal notranslate"><span class="pre">minicom</span></code>, you can install it by typing into a terminal:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo apt install minicom
+</pre></div>
+</div>
+<p>and then to use it to connect, type:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ minicom -b <span class="m">115200</span> -o -D /dev/ttyACM0
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Exit minicom by typing <code class="docutils literal notranslate"><span class="pre">CTRL-A</span></code> followed by <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+</div>
+</div>
+<div class="section" id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
+<p>On Windows CodeBug Connect Virtual Serial will appear as a COM port. Use Tera Term or PuTTY and connect with the approriate COM port with a baud rate of 115200, 8-bits of data, no Parity, 1 stop bit and no flow control.</p>
+</div>
 </div>
 </div>
 </div>
