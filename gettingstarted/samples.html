@@ -255,13 +255,13 @@
 <h2>Cheer lights<a class="headerlink" href="#cheer-lights" title="Permalink to this headline">¶</a></h2>
 <p>Tweet &#64;cheerlights a colour and see your CodeBug Connect change colour. (You must have successfully setup a WiFi connection first)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cbc</span>
-<span class="kn">import</span> <span class="nn">cbc.network</span>
+<span class="kn">from</span> <span class="nn">remote_manage</span> <span class="kn">import</span> <span class="n">WebSocketClient</span>
 <span class="kn">from</span> <span class="nn">cbc</span> <span class="kn">import</span> <span class="n">Color</span>
 
 <span class="k">def</span> <span class="nf">on_event</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-    <span class="n">cbc</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+    <span class="n">cbc</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">pixels</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
 
-<span class="n">ws</span> <span class="o">=</span> <span class="n">cbc</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">WebSocketClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;ws://cheerlights.codebug.org.uk/cheer/&quot;</span><span class="p">,</span> <span class="n">on_data</span><span class="o">=</span><span class="n">on_event</span><span class="p">)</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="n">WebSocketClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;ws://cheerlights.codebug.org.uk/cheer/&quot;</span><span class="p">,</span> <span class="n">on_text_data</span><span class="o">=</span><span class="n">on_event</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
