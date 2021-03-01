@@ -229,14 +229,6 @@
 <div class="section" id="force-dependent-colours-light-painting">
 <h2>Force dependent colours (light painting)<a class="headerlink" href="#force-dependent-colours-light-painting" title="Permalink to this headline">¶</a></h2>
 <p>CodeBug Connect’s LEDs change colour dependent on the force applied (try gentle shaking)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">force_colour</span><span class="p">():</span>
-    <span class="n">sat</span> <span class="o">=</span> <span class="mf">1.0</span>
-    <span class="n">bright</span> <span class="o">=</span> <span class="mf">0.4</span>
-    <span class="k">for</span> <span class="n">vec</span> <span class="ow">in</span> <span class="n">cbc</span><span class="o">.</span><span class="n">accel_sensor</span><span class="p">:</span>
-        <span class="n">mag</span> <span class="o">=</span> <span class="n">vec</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">vec</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">vec</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">vec</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">vec</span><span class="o">.</span><span class="n">z</span><span class="o">*</span><span class="n">vec</span><span class="o">.</span><span class="n">z</span>
-        <span class="n">cbc</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">pixels</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="n">cbc</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">mag</span><span class="o">/</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sat</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">bright</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="pir-alarm">
 <h2>Pir Alarm<a class="headerlink" href="#pir-alarm" title="Permalink to this headline">¶</a></h2>
